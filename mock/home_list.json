@@ -5,7 +5,8 @@
 		"name": "谭维仁",
 		"designation": "教授",
 		"icon":"hide",
-		"num": "500人在学"
+		"num": "500人在学",
+		"info": "直播中"
 	},
 	{
 		"imgUrl": "../img/List_Act_2.jpg",
@@ -13,7 +14,8 @@
 		"name": "",
 		"designation": "肿瘤/白血病/血液科",
 		"icon":"",
-		"num": "331"
+		"num": "331",
+		"info": "直播预告"
 	},
 	{
 		"imgUrl": "../img/List_Act_3.jpg",
@@ -21,7 +23,8 @@
 		"name": "谭维仁",
 		"designation": "教授",
 		"icon":"",
-		"num": "331"
+		"num": "331",
+		"info": "直播结束"
 	},
 	{
 		"imgUrl": "../img/video_fengmian.jpg",
@@ -29,7 +32,8 @@
 		"name": "谭维仁",
 		"designation": "教授",
 		"icon":"",
-		"num": "331"
+		"num": "331",
+		"info": "直播回放"
 	},
 	{
 		"imgUrl": "../img/List_Act_1.jpg",
@@ -37,7 +41,8 @@
 		"name": "谭维仁",
 		"designation": "教授",
 		"icon":"",
-		"num": "331"
+		"num": "331",
+		"info": "课程"
 	},
 	{
 		"imgUrl": "../img/List_Act_1.jpg",
@@ -45,7 +50,8 @@
 		"name": "谭维仁",
 		"designation": "教授",
 		"icon":"",
-		"num": "331"
+		"num": "331",
+		"info": "课程"
 	}
 	,
 	{
@@ -54,7 +60,8 @@
 		"name": "谭维仁",
 		"designation": "教授",
 		"icon":"",
-		"num": "331"
+		"num": "331",
+		"info": "课程"
 	}
 	,
 	{
@@ -63,7 +70,8 @@
 		"name": "谭维仁",
 		"designation": "教授",
 		"icon":"",
-		"num": "331"
+		"num": "331",
+		"info": "课程"
 	}
 	,
 	{
@@ -72,7 +80,8 @@
 		"name": "谭维仁",
 		"designation": "教授",
 		"icon":"",
-		"num": "331"
+		"num": "331",
+		"info": "课程"
 	}
 	,
 	{
@@ -81,7 +90,8 @@
 		"name": "谭维仁",
 		"designation": "教授",
 		"icon":"",
-		"num": "331"
+		"num": "331",
+		"info": "课程"
 	}
 	
 	
