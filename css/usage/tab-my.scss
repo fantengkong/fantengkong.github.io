@@ -73,12 +73,19 @@
                 margin-bottom: .625rem;
                 border-radius: 50%;
                 position: relative;
-                img {
+                .k_border2{
                     width: 100%;
-                    height: 100%;
+                    height: 100;
+                    border: 3px solid #fff;
                     border: 3px solid #fff;
                     border-radius: 50%;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
+                    
                 p{
                     margin: 0;
                     height: 1rem;
