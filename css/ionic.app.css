@@ -9682,7 +9682,8 @@ html {
     line-height: 20px;
     min-height: 22px;
     margin: 10px 0 9px 1rem;
-    color: #55473e; }
+    color: #55473e;
+    border: none; }
     .tab_home .h_center .scroll .button:last-child {
       margin-right: 44px; }
     .tab_home .h_center .scroll .button.activated {
@@ -9690,7 +9691,8 @@ html {
       background: #ff6600; }
     .tab_home .h_center .scroll .button.active {
       color: #fff;
-      background: #ff6600; }
+      background: #ff6600;
+      border: none; }
 .tab_home .h_center .h_more {
   display: block;
   position: absolute;
@@ -10272,6 +10274,7 @@ html {
       border: none;
       padding: 5.625rem 0 0.25rem 6.625rem; }
       .k_play .card .p_background .p_people img {
+        z-index: 1000;
         top: 4.375rem;
         left: 1rem;
         border: 2px solid #fff;

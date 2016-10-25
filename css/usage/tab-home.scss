@@ -63,6 +63,7 @@
                 min-height: 22px;
                 margin: 10px 0 9px 1rem;
                 color: #55473e;
+                border: none; 
                 &:last-child{
                     margin-right: 44px;
                 }
@@ -73,6 +74,8 @@
                 &.active{
                     color: #fff;
                     background: $color;
+                    border: none;
+                    
                 }
             }
         }
