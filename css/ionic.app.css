@@ -10144,7 +10144,7 @@ html {
       line-height: 1.4;
       color: #2b2a2a; }
     .k_play .p_content .p_info .p_title i {
-    	display: block;
+      display: block;
       color: #98a4b8;
       text-align: right;
       font-size: 1rem; }
@@ -10403,7 +10403,8 @@ html {
     background: #ebf4ff;
     margin-right: 10px;
     margin-bottom: 0.625rem;
-    border: none; }
+    border: none;
+    white-space: nowrap; }
     .k_classify ion-content .button i {
       display: none; }
     .k_classify ion-content .button.active {
