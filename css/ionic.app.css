@@ -10392,6 +10392,8 @@ html {
   top: 44px; }
 .k_classify .has-tabs, .k_classify .bar-footer.has-tabs {
   bottom: 0; }
+.k_classify .bar-footer .title {
+  color: #ff6600; }
 .k_classify ion-content {
   top: 44px;
   background: #fff;
