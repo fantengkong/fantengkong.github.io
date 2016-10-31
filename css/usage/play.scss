@@ -75,9 +75,12 @@
                 }
                 span {
                     display: block;
-                    color: #98a4b8;
-                    text-align: right;
-                    font-size: 1rem;
+                    i{
+                        display: block;
+                        float: right;
+                        color: #98a4b8;
+                        font-size: 1rem;
+                    }
                 }
             }
             .p_visitor {
