@@ -10150,7 +10150,7 @@ html {
       font-stretch: normal;
       line-height: 1.4;
       color: #2b2a2a; }
-    .k_play .p_content .p_info .p_title i {
+    .k_play .p_content .p_info .p_title span {
       display: block;
       color: #98a4b8;
       text-align: right;
