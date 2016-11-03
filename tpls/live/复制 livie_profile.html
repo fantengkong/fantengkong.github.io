@@ -8,13 +8,15 @@ k==kong
 d==detail
 -->
 
-<ion-view class="k_detail" view-title="探基-基因行业互助平台">
+<ion-view class="k_detail" view-title="详情页">
 	<ion-content>		
 		<div class="d_img">
 			<div ng-click="dBack()" class="d_back">
-				<i class="icon iconfont">&#xe64e;</i>
+				<i class="icon ion-ios-arrow-back"></i>
 			</div>
-			<img ng-src={{item.imgUrl}} />
+			<a href="#/play/{{item.id}}">
+				<img ng-src={{item.imgUrl}} />
+			</a>
 		</div>
 		<ion-list>
 			<p class="d_title">相约北京 | 第二届精准医疗与基因测序大会</p>
@@ -57,6 +59,6 @@ d==detail
 		</ion-list>
 	</ion-content>
 	<ion-footer-bar>
-		<h1 class="title" ng-click="detailGoTo()">参加活动</h1>
+		<h1 class="title">参加活动</h1>
 	</ion-footer-bar>
 </ion-view>
