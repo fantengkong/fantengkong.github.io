@@ -53,17 +53,24 @@ starterCtrls
 		$scope.selectItem = 0;
 	
 		$scope.selectPlay = function(index){
+			
     	$scope.selectItem = index;
  			if($(".playAll").eq(index).find('i').first().hasClass('ng-hide')){
+ 				$scope.playSignShow = true;
 	 			$(".playAll").eq(index).find('i').first().addClass('ng-show').removeClass('ng-hide');
 	 			$(".playAll").eq(index).find('i').last().addClass('ng-hide').removeClass('ng-show');
 	 		}else{
+	 			$scope.playSignShow = false;
 		 		$(".playAll").eq(index).find('i').first().addClass('ng-hide').removeClass('ng-show');
 	 			$(".playAll").eq(index).find('i').last().addClass('ng-show').removeClass('ng-hide');		
 	 		}
 		}
-		
-			
-			
-			
+		$scope.playSignShow = true;
+		$scope.play = function(){
+			$scope.playSignShow = false;
+		}
+		$scope.Video = true;
+		if($scope.Video == false){
+			$scope.display = true;
+		}
   }]);

@@ -18,6 +18,7 @@ starterCtrls
   			$state.go('live',{detailId: $stateParams.detailId, view: 'detail'});
   		}
     }
+    /*获取数据*/
     $http.get('mock/home_list.json')
 			.then(
 				function(res) {

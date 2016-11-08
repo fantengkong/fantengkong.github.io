@@ -7,7 +7,7 @@ starterCtrls
 		
 		/*跳转到首页*/
 		$scope.closeWatch = function() {
-			$state.go("tabs.home.watch");
+			$state.go("tabs.home.watch",{}, {reload: true});
 		}
 		/*滑动切换*/
 		$scope.onSwipeLeft = function() {
@@ -59,7 +59,7 @@ starterCtrls
 		
 		/*跳转到首页*/
 		$scope.closeLearn = function() {
-			$state.go("tabs.home.learn");
+			$state.go("tabs.home.learn",{}, {reload: true});
 		}
 		/*滑动切换*/
 		$scope.onSwipeLeft = function() {
@@ -113,7 +113,7 @@ starterCtrls
 		
 		/*跳转到首页*/
 		$scope.closeSay = function() {
-			$state.go("tabs.home.say");
+			$state.go("tabs.home.say",{}, {reload: true});
 		}
 		/*滑动切换*/
 		$scope.onSwipeLeft = function() {

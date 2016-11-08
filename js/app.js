@@ -42,14 +42,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   	//配置tabs路由
     .state('tabs', {
       url: '/tab',
-      cache: true,
+      
+      cache: false,
       templateUrl: './tpls/tabs.html',
       controller: 'TabsController'
     })
   	//配置首页的路由
     .state('tabs.home', {
       url: '/home',
-      cache: true,
+      cache: false,
       views: {
         'home-tab': {
           templateUrl: './tpls/tab-home.html',
@@ -60,7 +61,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   	//配置首页-看大会的路由    
     .state('tabs.home.watch', {
     	url:'/watch',
-    	cache: true,
+    	cache: false,
     	views: {
     		'watch-home': {
     			templateUrl: './tpls/home/watch-home.html'
@@ -70,7 +71,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   	//配置首页-学知识的路由    
     .state('tabs.home.learn', {
     	url:'/learn',
-    	cache: true,
+    	cache: false,
     	views: {
     		'learn-home': {
     			templateUrl: './tpls/home/learn-home.html'
@@ -80,7 +81,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   	//配置首页-大咖说的路由    
     .state('tabs.home.say', {
     	url:'/say',
-    	cache: true,
+    	cache: false,
     	views: {
     		'say-home': {
     			templateUrl: './tpls/home/say-home.html'
@@ -90,7 +91,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     //配置'活动页面'的路由
     .state('tabs.activity', {
       url: '/activity',
-      cache: true,
+      cache: false,
       views: {
         'activity-tab': {
           templateUrl: './tpls/tab-activity.html',
@@ -101,7 +102,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     //配置'我的页面'的路由
     .state('tabs.my', {
       url: '/my',
-      cache: true,
+      cache: false,
       	views: {
 	        'my-tab': {
 	          templateUrl: './tpls/tab-my.html',
@@ -119,14 +120,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       	'view': null,
       	'playId': null
       },
-      cache: true,
+      cache: false,
       templateUrl: './tpls/detail.html',
       controller: 'DetailController'
     })
     //配置'播放页面'的路由
     .state('play', {
       url: '/play/:playId',
-      cache: true,
+      cache: false,
       params: {
       	'detailId':null,
     		'view':null
@@ -137,14 +138,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     //配置'登录注册'的路由
 		.state('login_register', {
       url: '/login_register',
-      cache: true,
+      cache: false,
       templateUrl: './tpls/login_register.html',
       controller: 'LoginRegisterController'
     })
 		//配置'分类页面'的路由
     .state('classify', {
       url: '/classify',
-      cache: true,
+      cache: false,
       abstract:true,
       templateUrl: './tpls/classify/classify.html',
       controller: 'ClassifyController'
@@ -152,6 +153,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     //配置'分类页面/看大会页面'的路由
     .state('classify.watch', {
     	url:'/watch',
+    	cache: false,
      	views: {
         'watch-classify': {
           templateUrl: 'tpls/classify/watch-classify.html'
@@ -161,6 +163,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     //配置'分类页面/学知识页面'的路由
     .state('classify.learn', {
     	url:'/learn',
+    	cache: false,
     	views: {
         'learn-classify': {
           templateUrl: 'tpls/classify/learn-classify.html'
@@ -170,6 +173,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   	//配置'分类页面/大咖说页面'的路由
     .state('classify.say', {
     	url:'/say',
+    	cache: false,
     	views: {
         'say-classify': {
           templateUrl: 'tpls/classify/say-classify.html'
@@ -179,8 +183,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     //配置直播简介页的路由
   	.state('liveprofile', {
   		url: "/liveprofile",
-  		cache: true,
+  		cache: false,
   		params:{
+  			'liveprofileId': null,
   			'liveId': null,
   			'playId': null,
   			'detailId': null,
@@ -193,7 +198,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     //配置直播的路由
   	.state('live', {
   		url: "/live/:liveId",
-  		cache: true,
+  		cache: false,
   		params:{
   			'liveId': null,
   			'playId': null,

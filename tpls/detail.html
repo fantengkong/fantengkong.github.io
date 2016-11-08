@@ -9,15 +9,19 @@ d==detail
 -->
 
 <ion-view class="k_detail" view-title="探基-基因行业互助平台">
-	<ion-content>		
+	<ion-content>
+		<!--视频图片-->
 		<div class="d_img">
+			<!--返回按钮-->
 			<div ng-click="dBack()" class="d_back">
 				<i class="icon iconfont">&#xe64e;</i>
 			</div>
 			<img ng-src={{item.imgUrl}} />
 		</div>
 		<ion-list>
+			<!--活动页标题-->
 			<p class="d_title">相约北京 | 第二届精准医疗与基因测序大会</p>
+			<!--活动时间地点-->
 			<p class="d_time">
 				<span class="row">
 					<i class=".col-5 icon ion-android-time"></i><b>7月24日 9:00-7月25日 17:30</b>
@@ -28,6 +32,7 @@ d==detail
 					<i class=".col-5 icon ion-ios-location-outline"></i><b>北京 东城区 王府井大街 协和学术会堂 (帅府园胡同协和医院西门对面)</b>
 				</span>
 			</p>
+			<!--活动介绍-->
 			<dl class="d_info">
 				<dt>
 					<h2>{{item.title}}</h2>
@@ -49,6 +54,7 @@ d==detail
 					<a href="#/detail">http://m.seq.cn/act/301923.html</a>
 				</dd>
 			</dl>
+			<!--扫二维码关注探基微信号-->
 			<div class="d_weixin">
 				<div class="w_attention"><p>更多学习视频,请关注<i>探基</i>微信号</p><p>专注基因行业教育</p></div>				
 				<div class="w_QR_code"><img src="../img/1475915991.png" alt="" /></div>

@@ -21,7 +21,7 @@
         }
         .p_back {
             position: absolute;
-            z-index: 1;
+//          z-index: 1;
             width: 3.2rem;
             height: 3.2rem;
             border-radius: 50%;
@@ -35,7 +35,7 @@
         }
         .p_sign {
             position: absolute;
-            z-index: 1;
+//          z-index: 1;
             width: 8.8rem;
             height: 6rem;
             border-radius: 5px;
@@ -130,6 +130,9 @@
             }
         }
         .p_anchor {
+            &:hover{
+                background: #999!important;
+            }
             padding: 1rem 1.6rem;
             border: 1px solid #eaeaea;
             border-right: none;

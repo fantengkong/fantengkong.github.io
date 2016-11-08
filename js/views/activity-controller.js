@@ -1,8 +1,9 @@
 starterCtrls
   .controller('ActivityController', ['$scope', '$http', '$state', function ($scope, $http, $state) {
+    /*活动页数据*/
     $scope.pastActivities = [];
     $scope.latestActivities = []; 
-
+		/*获取数据*/
     $http.get('mock/activity.json')
 			.then(
 				function(res) {

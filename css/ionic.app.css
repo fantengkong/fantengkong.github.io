@@ -9931,10 +9931,10 @@ html {
   line-height: 20px;
   padding: 1.6rem 0 0 1.6rem;
   margin: 0; }
-.tab-my .k_lookedList .item {
+.tab-my .k_lookedList {
   border: none; }
   .tab-my .k_lookedList .item .item-content {
-    padding-left: 8.75rem;
+    padding-left: 14rem;
     padding-right: 1.6rem;
     padding-top: 8px; }
   .tab-my .k_lookedList .item img {
@@ -10120,7 +10120,6 @@ html {
     height: 100%; }
   .k_play .p_wrap .p_back {
     position: absolute;
-    z-index: 1;
     width: 3.2rem;
     height: 3.2rem;
     border-radius: 50%;
@@ -10133,7 +10132,6 @@ html {
     top: 1rem; }
   .k_play .p_wrap .p_sign {
     position: absolute;
-    z-index: 1;
     width: 8.8rem;
     height: 6rem;
     border-radius: 5px;
@@ -10209,6 +10207,8 @@ html {
     border: 1px solid #eaeaea;
     border-right: none;
     border-left: none; }
+    .k_play .p_content .p_anchor:hover {
+      background: #999 !important; }
     .k_play .p_content .p_anchor .col {
       padding: 0; }
     .k_play .p_content .p_anchor .a_portrait img {
@@ -10473,6 +10473,38 @@ html {
   margin: 0; }
 .liveprofile ion-content.has-footer {
   bottom: 50px; }
+.liveprofile ion-content .follow_TJweixin {
+  height: 40px;
+  background: #ff6600;
+  font-size: #fff;
+  padding: 0 1.6rem; }
+  .liveprofile ion-content .follow_TJweixin .col {
+    padding: 0; }
+  .liveprofile ion-content .follow_TJweixin div, .liveprofile ion-content .follow_TJweixin button {
+    color: #fff; }
+  .liveprofile ion-content .follow_TJweixin .TJ_logo {
+    display: inline-block;
+    line-height: 40px;
+    color: #fff;
+    padding-right: .6rem;
+    font-size: 22px;
+    font-weight: 900; }
+  .liveprofile ion-content .follow_TJweixin .TJ_info {
+    display: inline-block;
+    line-height: 12px;
+    font-size: 12px; }
+    .liveprofile ion-content .follow_TJweixin .TJ_info p {
+      font-size: 12px;
+      line-height: 20px;
+      height: 20px; }
+  .liveprofile ion-content .follow_TJweixin button {
+    font-size: 12px;
+    white-space: nowrap;
+    background: none;
+    margin: .8rem 0;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    height: 24px; }
 .liveprofile ion-content .liveprofile_img {
   position: relative;
   height: 21rem; }
@@ -10487,6 +10519,39 @@ html {
     width: 100%; }
     .liveprofile ion-content .liveprofile_img .liveprofile_countdown p {
       color: #fff; }
+  .liveprofile ion-content .liveprofile_img .liveprofile_living, .liveprofile ion-content .liveprofile_img .liveprofile_liveEnd {
+    height: 20px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 1rem;
+    right: 1.6rem;
+    padding: 0 1.6rem;
+    border-radius: 10px; }
+    .liveprofile ion-content .liveprofile_img .liveprofile_living p, .liveprofile ion-content .liveprofile_img .liveprofile_liveEnd p {
+      color: #fff; }
+  .liveprofile ion-content .liveprofile_img .liveprofile_playBack {
+    position: absolute;
+    width: 15rem;
+    height: 8.8rem;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    line-height: 5rem;
+    text-align: center;
+    color: #fff;
+    left: 0;
+    top: 0;
+    margin: auto;
+    right: 0;
+    bottom: 0; }
+    .liveprofile ion-content .liveprofile_img .liveprofile_playBack i {
+      font-size: 4rem; }
+    .liveprofile ion-content .liveprofile_img .liveprofile_playBack p {
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+      margin: 0; }
   .liveprofile ion-content .liveprofile_img .liveprofile_back {
     position: absolute;
     z-index: 1;
@@ -10614,6 +10679,8 @@ html {
   height: 50px; }
   .liveprofile .bar-footer.signUp {
     background: #ff6600; }
+  .liveprofile .bar-footer.calm {
+    background: #838f9f; }
   .liveprofile .bar-footer .title {
     color: #fff; }
 .liveprofile .p_mask {
@@ -10693,6 +10760,9 @@ html {
     border: none; }
     .popup-container .popup .popup-head h5, .popup-container .popup .popup-head h3 {
       color: #fff; }
+    .popup-container .popup .popup-head .popup-title i {
+      font-size: 40px;
+      color: #36d072; }
 
 /*
 * @description: "视频：分类目订阅层（默认）"页面样式
@@ -10707,7 +10777,7 @@ html {
   position: relative;
   width: 100%;
   height: 21rem; }
-  .live .l_play .live_back {
+  .live .l_play .live_back, .live .l_play .live_fullScreen {
     position: absolute;
     z-index: 1;
     width: 3.2rem;
@@ -10717,8 +10787,33 @@ html {
     line-height: 3.2rem;
     text-align: center;
     color: #fff;
-    left: 1.6rem;
+    right: 1.6rem; }
+  .live .l_play .live_back {
     top: 1rem; }
+  .live .l_play .live_fullScreen {
+    bottom: 1rem; }
+    .live .l_play .live_fullScreen i {
+      font-size: 20px; }
+  .live .l_play .live_finish {
+    position: absolute;
+    width: 8.8rem;
+    height: 8.8rem;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    line-height: 5rem;
+    text-align: center;
+    color: #fff;
+    left: 0;
+    top: 0;
+    margin: auto;
+    right: 0;
+    bottom: 0; }
+    .live .l_play .live_finish i {
+      font-size: 4rem; }
+    .live .l_play .live_finish p {
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+      margin: 0; }
   .live .l_play img {
     width: 100%;
     height: 21rem; }
@@ -10826,6 +10921,8 @@ html {
 .live .has-footer {
   bottom: 50px;
   top: 21rem; }
+.live .bar-footer {
+  height: 50px; }
 .live .l_footer.bar-footer {
   height: 50px; }
   .live .l_footer.bar-footer button {

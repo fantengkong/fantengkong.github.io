@@ -1,5 +1,5 @@
 <!--
-@description: "活动详情页"页面
+@description: "直播简介页"页面
 @author: 孔
 @update: name (2016-10-08)
 -->
@@ -9,15 +9,35 @@ d==detail
 -->
 
 <ion-view class="liveprofile">
-	<ion-content>		
+	<ion-content>
+		<!--关注探基微信-->
+		<div class="row follow_TJweixin" ng-if="followTJ">
+		  <div class="col TJ_logo">探基</div>
+		  <div class="col col-50 TJ_info"><p>online</p>基因行业在线教育平台</span></div>
+		  <div class="col col-25"><button>关注公众号</button></div>
+		  <div class="col col-10"></div>
+		</div>
 		<div class="liveprofile_img">
 			<!--返回按钮-->
 			<div ng-click="dBack()" class="liveprofile_back">
 				<i class="icon ion-ios-arrow-back"></i>
 			</div>
-			<!--开播倒计时-->
-			<div class="liveprofile_countdown">
+			<!--直播预告-->
+			<div class="liveprofile_countdown" ng-if="livePreview">
 				<p>距离开播还有: 3天 06小时 23分  18秒</p>
+			</div>
+			<!--正在直播-->
+			<div class="liveprofile_living" ng-click="closeLiving()" ng-if="living">
+				<p>正在直播</p>
+			</div>
+			<!--直播已结束-->
+			<div class="liveprofile_liveEnd" ng-click="livePlayBack()" ng-if="liveEnd">
+				<p>直播结束</p>
+			</div>
+			<!--直播结束可看回放-->
+			<div class="liveprofile_playBack" ng-if="playBack">
+				<i class="iconfont">&#xe656;</i>
+				<p>直播已结束,看回放</p>
 			</div>
 			<!--视频占位-->
 			<img ng-src={{item.imgUrl}} />
@@ -45,7 +65,7 @@ d==detail
 				会议地点：<i>北京 东城区 王府井大街 协和学术会堂 (帅府园胡同协和医院西门对面)</i>
 			</p>
 			<!--直播专家信息-->
-			<div class="live_people row" ng-if="speaker">
+			<div class="live_people row" ng-click="mesShow()" ng-if="speaker">
 				<div class="a_portrait col col-20">
 					<img src="../img/adam.jpg" alt="" />
 				</div>
@@ -53,7 +73,7 @@ d==detail
 					<p><i class="a_name">张启科</i><i class="a_title">研究员</i></p>
 					<p><i class="a_place">甘肃省人民医院</i><i class="a_office">血液科</i></p>
 				</div>
-				<span ng-click="mesShow()"><i class="card_show icon col ion-chevron-right col-10 a_go"></i></span>
+				<span><i class="card_show icon col ion-chevron-right col-10 a_go"></i></span>
 			</div>
 			<!--直播信息-->
 			<dl class="liveprofile_info">
@@ -78,8 +98,12 @@ d==detail
 			</dl>
 		</ion-list>
 	</ion-content>
+	<!--直播结束-->
+	<ion-footer-bar class="calm" ng-if="liveFinish">
+		<h1 class="title" ng-click="goHome()">直播结束</h1>
+	</ion-footer-bar>
 	<!--跳转到直播页-->
-	<ion-footer-bar class="signUp">
+	<ion-footer-bar class="signUp" ng-if="enterLive">
 		<h1 class="title" ng-bind="baoming" ng-click="showAlert()">报名看直播</h1>
 	</ion-footer-bar>
 	<!--遮罩层-->

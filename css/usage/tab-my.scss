@@ -34,23 +34,6 @@
                    height: 4.2rem; 
                 }
             }
-//          span {
-//              display: inline-block;
-//              color: #dadee4;
-//              font-size: 3rem;
-//              height: 4.375rem;
-//              line-height: 4.375rem;
-//              width: 4.375rem;
-//              border: 5px solid #dadee4;
-//              border-radius: 50%;
-//              text-align: center;
-//              margin: 1.25rem;
-//              i {
-//                  position: relative;
-//                  top: -5px;
-//                  left: 3px;
-//              }
-//          }
         }
     }
     .k_haslogin {
@@ -127,15 +110,13 @@
         margin: 0;
     }
     .k_lookedList {
+        border: none;
         .item {
             .item-content {
-                padding-left: 8.75rem;
+                padding-left: 14rem;
                 padding-right: 1.6rem;
                 padding-top: 8px;
             }
-                
-//          padding: 0.75rem 1rem 0.625rem 9rem;
-            border: none;
             img {
                 position: absolute;
                 border-radius: 4px;
