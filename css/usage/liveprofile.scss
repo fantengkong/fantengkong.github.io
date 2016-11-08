@@ -154,11 +154,12 @@
                     height: 24px;
                     border-radius: 5px;
                 }
-                i{
+                .people_num{
                     border-radius: 5px;
                     display: inline-block;
                     overflow: hidden;
                     height: 24px;
+                    width: auto;
                     color: #fe6700;
                     padding: 0 8px;
                     line-height: 24px;
@@ -180,7 +181,9 @@
                     &:first-of-type{
                         color: #b4b1ac;
                         background: none;
-                        border: solid 1px #b4b1ac;
+                        border: solid 1px #dbd7d0;
+                        height: 2.2rem;
+                        line-height: 2rem;
                     }
                 }
             }
@@ -284,6 +287,8 @@
         }
         height: 50px;
         .title {
+            height: 50px;
+            line-height: 50px;
             color: #fff;
         }
     }
@@ -297,6 +302,15 @@
         z-index: 10;
     }
     .card {
+        z-index: 11;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 10.2rem;
+        margin: auto;
+        width: 31.6rem;
+        height: 40rem;
+        border-radius: 4px;
         span {
             position: absolute;
             display: block;
@@ -309,16 +323,12 @@
             text-align: center;
             z-index: 10002;
         }
-        z-index: 11;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 10.2rem;
-        margin: auto;
-        width: 31.6rem;
-        height: 40rem;
+        
         ion-scroll {
-            height: 24rem;
+            height: 22rem;
+            .scroll-bar-indicator{
+                background: #eae6e3;
+            }
         }
         .p_introduce {
             padding-bottom: 0;
@@ -353,6 +363,7 @@
                     left: 1.6rem;
                     border: 2px solid #fff;
                     box-sizing: border-box;
+                    border-radius: 5px;
                 }
                 h2 {
                     line-height: 2.2rem;

@@ -2,6 +2,12 @@ starterCtrls
   .controller('LiveController',['$scope', '$http', '$ionicScrollDelegate', '$ionicHistory', '$state', '$stateParams', '$timeout',function ($scope, $http, $ionicScrollDelegate, $ionicHistory, $state, $stateParams, $timeout) {
     
     console.log($stateParams)
+    $scope.TJweixinShow = true;
+    if($scope.TJweixinShow == true){
+    	$(".has-footer").css({"top":"25rem"});
+    }else{
+    	$(".has-footer").css({"top":"21rem"});
+    }
     $scope.params = $stateParams;
     /*获取直播间数据*/
 		$http.get('mock/home/home_list.json')

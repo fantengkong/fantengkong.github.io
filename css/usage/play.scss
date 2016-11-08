@@ -80,6 +80,11 @@
                         font-size: 1.6rem;
                     }
                 }
+                .showMore{
+                    i{
+                        transform: rotate(180deg);
+                    }
+                }
             }
             .p_visitor {
                 color: #d6dbe2;
@@ -88,6 +93,9 @@
                 i {
                     padding: 0 1px;
                     font-size: 14px;
+                    &.icon{
+                        font-size: 11px;
+                    }
                 }
             }
             .p_major {
@@ -190,9 +198,11 @@
             padding: 1.6rem 1.6rem 1rem;
             font-size: 1.4rem;
             line-height: 2rem;
-            color: #98a4b8;
+            color: #898989;
             b {
+                color: #898989;
                 padding-right: 3px;
+                font-weight: 100;
             }
         }
         .p_vList {

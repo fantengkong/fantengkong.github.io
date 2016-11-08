@@ -9,6 +9,10 @@
 * c==classify
 * */
 .tab_home {
+    .bar{
+        background-image: linear-gradient(0deg, #e8e7e5, #e8e7e5 50%, transparent 50%);
+    
+    }
     ion-content{
         &.has-subheader{
             top: 84px;
@@ -94,7 +98,6 @@
             width: 40px;
             height: 40px;
             z-index: 1;
-            opacity: 0.8;
             background-color: #f1f6fb;
             box-shadow: 0 -1px 3px 0 #91abd3;
             padding: 0;
@@ -158,7 +161,7 @@
                 color: #aab0b8;
                 .h_camera {
                     .icon {
-                        color: #d6dbe2;
+                        color: #e7e6e4;
                         padding: 0 0.32rem;
                         font-size: 1.6rem;
                     }

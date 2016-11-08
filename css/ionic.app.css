@@ -9643,6 +9643,8 @@ html {
 * k==kong
 * c==classify
 * */
+.tab_home .bar {
+  background-image: linear-gradient(0deg, #e8e7e5, #e8e7e5 50%, transparent 50%); }
 .tab_home ion-content.has-subheader {
   top: 84px; }
 .tab_home .tabs {
@@ -9706,7 +9708,6 @@ html {
   width: 40px;
   height: 40px;
   z-index: 1;
-  opacity: 0.8;
   background-color: #f1f6fb;
   box-shadow: 0 -1px 3px 0 #91abd3;
   padding: 0;
@@ -9757,7 +9758,7 @@ html {
       display: inline-block;
       float: right; }
       .tab_home .h_list .item-content p .h_camera .icon {
-        color: #d6dbe2;
+        color: #e7e6e4;
         padding: 0 0.32rem;
         font-size: 1.6rem; }
   .tab_home .h_list .item-content .h_state {
@@ -10179,6 +10180,8 @@ html {
         float: right;
         color: #98a4b8;
         font-size: 1.6rem; }
+    .k_play .p_content .p_info .p_title .showMore i {
+      transform: rotate(180deg); }
     .k_play .p_content .p_info .p_visitor {
       color: #d6dbe2;
       line-height: 2.2rem;
@@ -10186,6 +10189,8 @@ html {
       .k_play .p_content .p_info .p_visitor i {
         padding: 0 1px;
         font-size: 14px; }
+        .k_play .p_content .p_info .p_visitor i.icon {
+          font-size: 11px; }
     .k_play .p_content .p_info .p_major {
       padding-bottom: 1.4rem; }
       .k_play .p_content .p_info .p_major i {
@@ -10258,9 +10263,11 @@ html {
     padding: 1.6rem 1.6rem 1rem;
     font-size: 1.4rem;
     line-height: 2rem;
-    color: #98a4b8; }
+    color: #898989; }
     .k_play .p_content .p_set b {
-      padding-right: 3px; }
+      color: #898989;
+      padding-right: 3px;
+      font-weight: 100; }
   .k_play .p_content .p_vList .item-icon-right .icon {
     font-size: 22px; }
   .k_play .p_content .p_vList .list {
@@ -10606,11 +10613,12 @@ html {
       width: 24px;
       height: 24px;
       border-radius: 5px; }
-    .liveprofile ion-content .list .liveprofile_enrollment i {
+    .liveprofile ion-content .list .liveprofile_enrollment .people_num {
       border-radius: 5px;
       display: inline-block;
       overflow: hidden;
       height: 24px;
+      width: auto;
       color: #fe6700;
       padding: 0 8px;
       line-height: 24px;
@@ -10630,7 +10638,9 @@ html {
       .liveprofile ion-content .list .liveprofile_keywords i:first-of-type {
         color: #b4b1ac;
         background: none;
-        border: solid 1px #b4b1ac; }
+        border: solid 1px #dbd7d0;
+        height: 2.2rem;
+        line-height: 2rem; }
   .liveprofile ion-content .list .liveprofile_time_place {
     border-top: 1px solid #eae6e3;
     padding: 2rem 1.6rem .5rem;
@@ -10700,6 +10710,8 @@ html {
   .liveprofile .bar-footer.calm {
     background: #838f9f; }
   .liveprofile .bar-footer .title {
+    height: 50px;
+    line-height: 50px;
     color: #fff; }
 .liveprofile .p_mask {
   position: absolute;
@@ -10717,7 +10729,8 @@ html {
   top: 10.2rem;
   margin: auto;
   width: 31.6rem;
-  height: 40rem; }
+  height: 40rem;
+  border-radius: 4px; }
   .liveprofile .card span {
     position: absolute;
     display: block;
@@ -10730,7 +10743,9 @@ html {
     text-align: center;
     z-index: 10002; }
   .liveprofile .card ion-scroll {
-    height: 24rem; }
+    height: 22rem; }
+    .liveprofile .card ion-scroll .scroll-bar-indicator {
+      background: #eae6e3; }
   .liveprofile .card .p_introduce {
     padding-bottom: 0;
     padding-top: 0;
@@ -10759,7 +10774,8 @@ html {
         top: 7rem;
         left: 1.6rem;
         border: 2px solid #fff;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        border-radius: 5px; }
       .liveprofile .card .p_background .p_people h2 {
         line-height: 2.2rem;
         color: #fff;
@@ -10873,7 +10889,7 @@ html {
   z-index: 6;
   padding: 0 1.6rem;
   position: absolute;
-  top: 21rem;
+  bottom: -38.5px;
   width: 100%;
   height: 40px;
   line-height: 40px;
@@ -10904,7 +10920,7 @@ html {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-    background: #ff6600;
+    background: #f00;
     color: #fff; }
 .live ion-content {
   background: #f0eff5; }
@@ -10940,7 +10956,8 @@ html {
       line-height: 18px;
       font-size: 12px;
       border-radius: 5px;
-      margin: 1px 0; }
+      margin: 1px 0;
+      text-align: left; }
       .live ion-content .msgContent p b {
         width: 0;
         height: 0;
@@ -10975,6 +10992,11 @@ html {
   top: 21rem; }
 .live .bar-footer {
   height: 50px; }
+  .live .bar-footer .title {
+    height: 50px;
+    line-height: 50px; }
+  .live .bar-footer .bar-calm {
+    background: #838f9f; }
 .live .l_footer.bar-footer {
   height: 50px; }
   .live .l_footer.bar-footer button {

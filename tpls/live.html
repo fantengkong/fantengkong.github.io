@@ -9,7 +9,7 @@ l==live
 -->
 <ion-view class="live" view-title="探基-基因行业互助平台">
 	<!--关注探基微信-->
-		<div class="row live_TJweixin" ng-if="!TJweixinShow">
+		<div class="row live_TJweixin" ng-if="TJweixinShow">
 		  <div class="col col-20 TJ_logo">探基</div>
 		  <div class="col col-50 TJ_info"><p>online</p>基因行业在线教育平台</span></div>
 		  <div class="col col-30"><button ng-click="goToTJweixin()">关注公众号</button></div>
@@ -17,11 +17,11 @@ l==live
 	<!--直播视频-->
 	<div class="l_play">
 		<!--返回按钮-->
-		<div ng-click="liveBack()" class="live_back">
+		<div ng-click="liveBack()" class="live_back" nav-direction="back">
 			<i class="icon iconfont">&#xe650;</i>
 		</div>
-		<div ng-click="pBack()" class="live_fullScreen">
-			<i class="icon iconfont">&#xe653;</i>
+		<div ng-click="" class="live_fullScreen">
+			<i class="icon iconfont">&#xe662;</i>
 		</div>
 		<!--直播已结束-->
 		<div ng-if="liveOver" class="live_finish">
@@ -29,14 +29,15 @@ l==live
 			<p>直播已结束</p>
 		</div>
 		<img src="../img/List_Act_1.jpg" alt="" />
+		<!--专家信息-->
+		<div class="l_player">
+			<img src="../img/perry.png" ng-if="isExpert">
+			<i class="l_people" ng-if="isExpert">张启科</i>
+			<i class="l_title" ng-if="isExpert">讲师</i>
+			<span><i>123456</i>人看<b>·</b><i ng-bind="zan">1234</i>赞</span>
+		</div>
 	</div>
-	<!--专家信息-->
-	<div class="l_player">
-		<img src="../img/perry.png" ng-if="isExpert">
-		<i class="l_people" ng-if="isExpert">张启科</i>
-		<i class="l_title" ng-if="isExpert">讲师</i>
-		<span><i>123456</i>人看<b>·</b><i ng-bind="zan">1234</i>赞</span>
-	</div>
+		
 	<ion-content class="has-footer padding" delegate-handle="liveScroll">
 		<!--聊天记录-->
 		<ul class="l_chat">

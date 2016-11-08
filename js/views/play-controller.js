@@ -2,7 +2,7 @@ starterCtrls
   .controller('PlayController', ['$scope', '$state', '$stateParams', '$http', function ($scope, $state, $stateParams,$http) {
 		console.log($stateParams);
 		$scope.pBack=function(){
-			if($stateParams.myId || $stateParams.myId==0 || $stateParams.homeId || $stateParamsl.homeId == 0){
+			if($stateParams.myId || $stateParams.myId==0 || $stateParams.homeId || $stateParams.homeId == 0){
 				$state.go($stateParams.view);
 			}else	if($stateParams.playId || $stateParams.playId == 0){
 				$state.go($stateParams.view2, {detailId:$stateParams.playId,view: $stateParams.view});
@@ -30,7 +30,6 @@ starterCtrls
   	}
   	/*显示更多*/
   	$scope.display = false;
-  	$(".showMore i").css('transform','rotate(180deg)');
   	$scope.showMore = function(){
   		if($scope.display != false){
   			$(".showMore i").css('transform','rotate(180deg)');

@@ -19,7 +19,7 @@ d==detail
 		<!--视频窗口-->
 		<div class="liveprofile_img">
 			<!--返回按钮-->
-			<div ng-click="dBack()" class="liveprofile_back">
+			<div ng-click="dBack()" class="liveprofile_back" nav-direction="back">
 				<i class="icon iconfont">&#xe64e;</i>
 			</div>
 			<!--直播预告-->
@@ -53,7 +53,7 @@ d==detail
 				<span><img src="http://placehold.it/24" alt="" /></span>
 				<span><img src="http://placehold.it/24" alt="" /></span>
 				<span><img src="http://placehold.it/24" alt="" /></span>
-				<i>27人已报名</i>
+				<span class="people_num">27人已报名</span>
 			</div>
 			<!--直播关键词-->
 			<div class="liveprofile_keywords">
@@ -104,7 +104,7 @@ d==detail
 	</ion-footer-bar>
 	<!--跳转到直播页-->
 	<ion-footer-bar class="signUp" ng-if="enterLive">
-		<h1 class="title" ng-bind="baoming" ng-click="showAlert()">报名看直播</h1>
+		<h1 class="title" ng-bind="baoming" ng-click="showAlert()" nav-direction="forward">报名看直播</h1>
 	</ion-footer-bar>
 	<!--遮罩层-->
 	<div class="p_mask" ng-if="cardShow">
