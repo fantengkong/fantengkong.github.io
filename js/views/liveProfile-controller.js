@@ -1,35 +1,9 @@
 starterCtrls
   .controller('LiveProfileController',['$scope','$state','$stateParams','$http', '$ionicHistory', '$ionicPopup', '$timeout', function ($scope, $state, $stateParams, $http, $ionicHistory, $ionicPopup, $timeout) {
-		/*获取直播间数据*/
-		$http.get('mock/home_list.json')
-			.then(
-				function(res) {
-					$scope.item = res.data[0];
-//					console.log($scope.item);
-				}
-			);
-		
-		
-    console.log($stateParams);
-		/*跳转上一页*/
-    $scope.dBack=function(){
-    	
-    } 
-    /*跳转下一页*/
-    $scope.detailGoTo = function(){
-  		
-    }
-    /*判断活动或专家*/
-    $scope.speaker = true;
-    /*直播专家信息显示*/
-    $scope.cardShow = false;
-    $scope.mesShow = function(){
-    	$scope.cardShow = true;
-    }
-    $scope.mesHide = function(){
-   		$scope.cardShow = false;
-    }
-    /*直播预告*/
+		/*参数*/
+		$scope.params = $stateParams;
+		console.log($scope.params);
+		/*直播预告*/
    	$scope.livePreview = true;
    	/*直播中*/
 		$scope.living = false;
@@ -43,9 +17,59 @@ starterCtrls
 		/*报名看直播*/
 		$scope.enterLive = true;
 		$scope.baoming="报名看直播";
+		/*跳转上一页*/
+    $scope.dBack=function(){
+    	$state.go($scope.params.view);
+    } 
+    /*判断是否是专家*/
+    $scope.speaker = true;
+    /*直播专家信息显示*/
+    $scope.cardShow = false;
+    $scope.mesShow = function(){
+    	$scope.cardShow = true;
+    }
+    $scope.mesHide = function(){
+   		$scope.cardShow = false;
+    }
+    
+		/*获取数据*/
+		$http.get('./mock/home/home_list.json')
+		.then(
+			function(res) {
+				if($scope.params.liveprofileId || $scope.params.liveprofileId == '0'){
+					$scope.item = res.data[$stateParams.liveprofileId];
+				}else if($scope.params.LiveId || $scope.params.liveId == '0'){
+					$scope.item = res.data[$stateParams.liveId];
+				}else{
+					$scope.item = res.data[0];
+				}
+				if($scope.item.info == "直播预告"){
+					$scope.livePreview = true;
+				}else if($scope.item.info == "直播中"){
+					$scope.livePreview = false;
+					$scope.living = true;
+					$scope.followTJ = true;
+				}else if($scope.item.info == "直播结束"){
+					$scope.livePreview = false;
+					$scope.liveEnd = true;
+					$scope.liveFinish = true;
+					$scope.enterLive = false;
+				}else if($scope.item.info == "直播回放"){
+					$scope.livePreview = false;
+					$scope.playBack = true;
+					$scope.liveFinish = true;
+					$scope.enterLive = false;
+				}
+			}
+		);
+		if($scope.params.liveId || $scope.params.liveId==0){
+			$scope.baoming="进入直播间";
+	    $(".signUp").css({"background":"#fb4831"});
+		}
+		
 		$scope.showAlert = function() {
 			if($scope.baoming == "进入直播间"){
-				$state.go("live");
+    		$state.go('live',{liveId: $scope.params.liveprofileId, view2: 'liveprofile', view: $scope.params.view });
 				return false;
 			}
 			$scope.data = {}
@@ -81,5 +105,8 @@ starterCtrls
 		}
 		$scope.goHome = function(){
 			$state.go("tabs.home.watch");
+		}
+		$scope.goToTJweixin = function(){
+			$state.go("login_register");
 		}
   }]);

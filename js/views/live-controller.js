@@ -1,5 +1,25 @@
 starterCtrls
   .controller('LiveController',['$scope', '$http', '$ionicScrollDelegate', '$ionicHistory', '$state', '$stateParams', '$timeout',function ($scope, $http, $ionicScrollDelegate, $ionicHistory, $state, $stateParams, $timeout) {
+    
+    console.log($stateParams)
+    $scope.params = $stateParams;
+    /*获取直播间数据*/
+		$http.get('mock/home/home_list.json')
+		.then(
+			function(res) {
+				if($scope.params.id>=0){
+					$scope.item = res.data[$scope.params.id];
+				}else{
+					$scope.item = res.data[0];
+				}
+			}
+		);
+		
+		/*返回*/
+    $scope.liveBack = function(){
+    	$state.go($scope.params.view2,{detailId: $scope.params.liveId, liveId: $scope.params.liveId, liveprofileId: $scope.params.liveId, view: $scope.params.view});
+    } 
+		
     /*发送聊天*/
     $scope.sendChat = function(){
   		var oDiv=document.createElement('div');
@@ -34,14 +54,7 @@ starterCtrls
 //  } 
 
 //		console.log($stateParams)
-		/*返回按钮*/
-    $scope.liveBack = function(){
-    	if($stateParams.view&&$stateParams.detailId>=0){
-    		$state.go($stateParams.view,{detailId: $stateParams.detailId, view: 'tabs.activity'});
-    	}else{
-    		$state.go('tabs.home');
-    	}
-    } 
+		
    	$scope.commentsOpen = true;
     $scope.commentsClose = false;
     $scope.liveOver = false;
@@ -52,4 +65,8 @@ starterCtrls
     },3000);
     /*判断专家或活动*/
    $scope.isExpert = true;
+   /*进入探基微信公众号*/
+   $scope.goToTJweixin = function(){
+   	$state.go("login_register");
+   }
   }]);

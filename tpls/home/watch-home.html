@@ -15,16 +15,16 @@
 	<!--主体内容-->
 	<ion-content delegate-handle="h_content" on-scroll="getPos()" scroll-event-interval="5" class="scdiv h_content has-subheader has-tabs">
 		<!--轮播图-->
-		<div class="h_banner" href="#/play/0">
+		<div class="h_banner">
 			<ion-slide-box auto-play="true" does-continue="true" show-pager="true">
 				<ion-slide>
-					<a href="#/play/0"><img src="../img/Home_Banner.jpg" alt="" /></a>
+					<a ui-sref="play({homeId: '0',playId: '0', view:'tabs.home.watch'})"><img src="../img/Home_Banner.jpg" alt="" /></a>
 				</ion-slide>
 				<ion-slide>
-					<a href="#/play/1"><img href="#/play/1" src="../img/List_Act_1.jpg" alt="" /></a>
+					<a ui-sref="play({homeId: '1',playId: '1', view:'tabs.home.watch'})"><img href="#/play/1" src="../img/List_Act_1.jpg" alt="" /></a>
 				</ion-slide>
 				<ion-slide>
-					<a href="#/play/2"><img href="#/play/2" src="../img/List_Act_3.jpg" alt="" /></a>
+					<a ui-sref="play({homeId: '2',playId: '2', view:'tabs.home.watch'})"><img href="#/play/2" src="../img/List_Act_3.jpg" alt="" /></a>
 				</ion-slide>
 			</ion-slide-box>
 		</div>

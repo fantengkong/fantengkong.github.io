@@ -119,7 +119,6 @@
                 height: 3.2rem;
                 border-radius: 50%;
                 background: rgba(0,0,0,0.5);
-                font-size: 2.4rem;
                 line-height: 3.2rem;
                 text-align: center;
                 color: #fff;
@@ -168,7 +167,6 @@
             }
             .liveprofile_keywords{
                 padding: 1.4rem 1.6rem;
-                border-bottom: 1px solid #eae6e3;
                 i {
                     display: inline-block;
                     padding: 0 1.6rem;
@@ -187,6 +185,7 @@
                 }
             }
             .liveprofile_time_place{
+                border-top: 1px solid #eae6e3;
                 padding: 2rem 1.6rem .5rem;
                 color: #888;
                 line-height: 20px;

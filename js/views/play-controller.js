@@ -2,8 +2,10 @@ starterCtrls
   .controller('PlayController', ['$scope', '$state', '$stateParams', '$http', function ($scope, $state, $stateParams,$http) {
 		console.log($stateParams);
 		$scope.pBack=function(){
-			if($stateParams.playId>=0&&$stateParams.view){
-				$state.go($stateParams.view, {detailId:$stateParams.detailId});
+			if($stateParams.myId || $stateParams.myId==0 || $stateParams.homeId || $stateParamsl.homeId == 0){
+				$state.go($stateParams.view);
+			}else	if($stateParams.playId || $stateParams.playId == 0){
+				$state.go($stateParams.view2, {detailId:$stateParams.playId,view: $stateParams.view});
 			}else if($stateParams.detailId>=0){
 				$state.go("detail", {detailId:$stateParams.detailId});
 			}else{

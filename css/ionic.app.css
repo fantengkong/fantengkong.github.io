@@ -9810,6 +9810,9 @@ html {
     font-size: 14px; }
   .tab-activity .tabs .tab-item-active {
     font-size: 16px; }
+.tab-activity .has-tabs-top {
+  top: 44px;
+  bottom: 50px; }
 .tab-activity .has-tabs.pane {
   top: 44px;
   bottom: 50px; }
@@ -9933,43 +9936,45 @@ html {
   margin: 0; }
 .tab-my .k_lookedList {
   border: none; }
-  .tab-my .k_lookedList .item .item-content {
-    padding-left: 14rem;
-    padding-right: 1.6rem;
-    padding-top: 8px; }
-  .tab-my .k_lookedList .item img {
-    position: absolute;
-    border-radius: 4px;
-    width: 11.6rem;
-    height: 7.2rem;
-    max-width: none;
-    max-height: none;
-    left: 1.6rem;
-    top: 1.2rem; }
-  .tab-my .k_lookedList .item h2 {
-    white-space: normal; }
-  .tab-my .k_lookedList .item p {
-    margin-top: 1.6rem;
-    color: #aab0b8;
-    font-size: 12px;
-    position: relative; }
-    .tab-my .k_lookedList .item p span {
+  .tab-my .k_lookedList .item {
+    border-style: none; }
+    .tab-my .k_lookedList .item .item-content {
+      padding-left: 14rem;
+      padding-right: 1.6rem;
+      padding-top: 8px; }
+    .tab-my .k_lookedList .item img {
       position: absolute;
-      right: 0; }
-      .tab-my .k_lookedList .item p span i {
-        padding: 0 4px; }
-  .tab-my .k_lookedList .item b {
-    position: absolute;
-    top: 1.2rem;
-    left: 1.6rem;
-    font-weight: 100;
-    display: block;
-    padding: 0 .8rem;
-    background: #409cf3;
-    text-align: center;
-    font-size: 10px;
-    border-radius: 4px 0 4px 0;
-    color: #fff; }
+      border-radius: 4px;
+      width: 11.6rem;
+      height: 7.2rem;
+      max-width: none;
+      max-height: none;
+      left: 1.6rem;
+      top: 1.2rem; }
+    .tab-my .k_lookedList .item h2 {
+      white-space: normal; }
+    .tab-my .k_lookedList .item p {
+      margin-top: 1.6rem;
+      color: #aab0b8;
+      font-size: 12px;
+      position: relative; }
+      .tab-my .k_lookedList .item p span {
+        position: absolute;
+        right: 0; }
+        .tab-my .k_lookedList .item p span i {
+          padding: 0 4px; }
+    .tab-my .k_lookedList .item b {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.6rem;
+      font-weight: 100;
+      display: block;
+      padding: 0 .8rem;
+      background: #409cf3;
+      text-align: center;
+      font-size: 10px;
+      border-radius: 4px 0 4px 0;
+      color: #fff; }
 
 /*
 * @description: "活动详情页"页面样式
@@ -10099,7 +10104,13 @@ html {
   .k_detail .bar-footer {
     background: #de4040;
     height: 50px; }
+    .k_detail .bar-footer.closed {
+      background: #838e9f; }
+    .k_detail .bar-footer.beginSoon {
+      background: #eeaa54; }
     .k_detail .bar-footer .title {
+      height: 50px;
+      line-height: 50px;
       color: #fff; }
 
 /*
@@ -10124,7 +10135,6 @@ html {
     height: 3.2rem;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.5);
-    font-size: 2.4rem;
     line-height: 3.2rem;
     text-align: center;
     color: #fff;
@@ -10202,13 +10212,22 @@ html {
         font-size: 10px;
         line-height: 18px;
         color: #888; }
+  .k_play .p_content .activity_time_place {
+    padding: 2rem 1.6rem .5rem;
+    color: #888;
+    line-height: 20px;
+    font-size: 13px; }
+    .k_play .p_content .activity_time_place div {
+      overflow: hidden; }
+    .k_play .p_content .activity_time_place span {
+      display: inline-block; }
   .k_play .p_content .p_anchor {
     padding: 1rem 1.6rem;
     border: 1px solid #eaeaea;
     border-right: none;
     border-left: none; }
     .k_play .p_content .p_anchor:hover {
-      background: #999 !important; }
+      background: #d9d9d9 !important; }
     .k_play .p_content .p_anchor .col {
       padding: 0; }
     .k_play .p_content .p_anchor .a_portrait img {
@@ -10559,7 +10578,6 @@ html {
     height: 3.2rem;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.5);
-    font-size: 2.4rem;
     line-height: 3.2rem;
     text-align: center;
     color: #fff;
@@ -10598,8 +10616,7 @@ html {
       line-height: 24px;
       background: #f4f4f4; }
   .liveprofile ion-content .list .liveprofile_keywords {
-    padding: 1.4rem 1.6rem;
-    border-bottom: 1px solid #eae6e3; }
+    padding: 1.4rem 1.6rem; }
     .liveprofile ion-content .list .liveprofile_keywords i {
       display: inline-block;
       padding: 0 1.6rem;
@@ -10615,6 +10632,7 @@ html {
         background: none;
         border: solid 1px #b4b1ac; }
   .liveprofile ion-content .list .liveprofile_time_place {
+    border-top: 1px solid #eae6e3;
     padding: 2rem 1.6rem .5rem;
     color: #888;
     line-height: 20px;
@@ -10773,6 +10791,40 @@ html {
 * k==kong
 * l==live
 * */
+.live p {
+  margin: 0; }
+.live .live_TJweixin {
+  height: 40px;
+  background: #ff6600;
+  font-size: #fff;
+  padding: 0 1.6rem; }
+  .live .live_TJweixin .col {
+    padding: 0; }
+  .live .live_TJweixin div, .live .live_TJweixin button {
+    color: #fff; }
+  .live .live_TJweixin .TJ_logo {
+    display: inline-block;
+    line-height: 40px;
+    color: #fff;
+    padding-right: .6rem;
+    font-size: 22px;
+    font-weight: 900; }
+  .live .live_TJweixin .TJ_info {
+    display: inline-block;
+    line-height: 12px;
+    font-size: 12px; }
+    .live .live_TJweixin .TJ_info p {
+      font-size: 12px;
+      line-height: 20px;
+      height: 20px; }
+  .live .live_TJweixin button {
+    font-size: 12px;
+    white-space: nowrap;
+    background: none;
+    margin: .8rem 0;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    height: 24px; }
 .live .l_play {
   position: relative;
   width: 100%;

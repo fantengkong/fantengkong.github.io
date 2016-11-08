@@ -62,7 +62,14 @@ d==detail
 			</div>			
 		</ion-list>
 	</ion-content>
-	<ion-footer-bar>
-		<h1 class="title" ng-click="detailGoTo()">参加活动</h1>
+	
+	<ion-footer-bar ng-if="attend">
+		<h1 class="title" ng-click="goToLive()">参加活动</h1>
+	</ion-footer-bar>
+	<ion-footer-bar class="closed" ng-if="close">
+		<h1 class="title" ng-click="goToPlay()">已关闭</h1>
+	</ion-footer-bar>
+	<ion-footer-bar class="beginSoon" ng-if="begin_soon">
+		<h1 class="title">即将开始</h1>
 	</ion-footer-bar>
 </ion-view>

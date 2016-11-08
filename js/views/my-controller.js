@@ -31,6 +31,15 @@ starterCtrls
 					}
 				}
 			);
+		$scope.myLookedVedios = []; 
+		
+  	$http.get('mock/my_list.json')
+		.then(
+			function(res) {
+				$scope.myView = res.data;
+				$scope.myViewLength = $scope.myView.length;
+			}
+		);	
   }])
   .controller('MyLookedController',['$scope', '$ionicTabsDelegate', '$http', function ($scope, $ionicTabsDelegate, $http) {
 		

@@ -99,6 +99,26 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+    //配置'最新活动'的路由
+    .state('tabs.activity.lastest', {
+      url: '/lastest',
+      cache: false,
+      views: {
+        'lastestAct': {
+          templateUrl: './tpls/activity/lastestAct.html',
+        }
+      }
+    })
+    //配置'往期活动'的路由
+    .state('tabs.activity.past', {
+      url: '/past',
+      cache: false,
+      views: {
+        'pastAct': {
+          templateUrl: './tpls/activity/pastAct.html',
+        }
+      }
+    })
     //配置'我的页面'的路由
     .state('tabs.my', {
       url: '/my',
@@ -112,13 +132,13 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
     //配置'详情页'的路由
     .state('detail', {
-      url: '/tab/:detailId',
+      url: '/tab/:view/:detailId',
       //url: '/tab/:homeId',
       params:{
-      	'info': null,
       	'detailId': null,
       	'view': null,
-      	'playId': null
+      	'playId': null,
+      	'view2': null
       },
       cache: false,
       templateUrl: './tpls/detail.html',
@@ -126,11 +146,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
     //配置'播放页面'的路由
     .state('play', {
-      url: '/play/:playId',
+      url: '/:view/play/:playId/:myId',
       cache: false,
       params: {
-      	'detailId':null,
-    		'view':null
+      	'playId': null,
+      	'detailId': null,
+    		'view': null,
+    		'view2': null,
+    		'myId': null,
+    		'homeId':null
     	},
       templateUrl: './tpls/play.html',
       controller: 'PlayController'
@@ -182,7 +206,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
     //配置直播简介页的路由
   	.state('liveprofile', {
-  		url: "/liveprofile",
+  		url: "/:view/liveprofile/:liveprofileId",
   		cache: false,
   		params:{
   			'liveprofileId': null,
@@ -197,13 +221,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   	})
     //配置直播的路由
   	.state('live', {
-  		url: "/live/:liveId",
+  		url: "/:view/:view2/live/:liveId",
   		cache: false,
   		params:{
   			'liveId': null,
   			'playId': null,
   			'detailId': null,
   			'view': null,
+  			'view2': null,
   			'info': null
   		},
   		templateUrl: './tpls/live.html',

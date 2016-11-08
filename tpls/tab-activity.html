@@ -8,31 +8,14 @@
 -->
 
 <ion-view class="tab-activity" view-title="探基-基因行业互助平台">
-	<ion-tabs class="tabs-table">
-		<ion-tab title="最新活动">
-			<ion-content>
-				<ion-list>
-					<ion-item ng-repeat="latestActivity in latestActivities" ui-sref="detail({detailId:latestActivity.id,view:'tabs.activity',info:latestActivity.info})">
-						<div>
-							<img ng-src={{latestActivity.imgUrl}} alt="" />
-							<p class="{{latestActivity.background}}">{{latestActivity.info}}</p>
-						</div>	
-					</ion-item>
-				</ion-list>
-			</ion-content>
-		</ion-tab>
-		<ion-tab title="往期活动">
-			<ion-content>
-				<ion-list>
-					<ion-item ng-repeat="pastActivity in pastActivities" ui-sref="detail({detailId:pastActivity.id,view:'tabs.activity',info:pastActivity.info})">
-						<div>
-							<a><img ng-src={{pastActivity.imgUrl}} alt="" /></a>
-							<p>{{pastActivity.info}}</p>
-						</div>
-					</ion-item>
-				</ion-list>
-			</ion-content>
-		</ion-tab>
-	</ion-tabs>
-	
+	<div>
+		<ion-tabs class="tabs-table tabs-top tabs-light">
+			<ion-tab title="最新活动" href="#/tab/activity/lastest">
+				<ion-nav-view animation="slide-left-right" name="lastestAct"></ion-nav-view>
+			</ion-tab>
+			<ion-tab title="往期活动" href="#/tab/activity/past">
+				<ion-nav-view animation="slide-left-right" name="pastAct"></ion-nav-view>
+			</ion-tab>
+		</ion-tabs>
+	</div>
 </ion-view>

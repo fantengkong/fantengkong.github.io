@@ -18,20 +18,20 @@
 		<div class="h_banner">
 			<ion-slide-box auto-play="true" does-continue="true" show-pager="true">
 				<ion-slide>
-					<a href="#/play/3"><img src="../img/Home_Banner.jpg" alt="" /></a>
+					<a ui-sref="play({homeId: '0',playId: '0', view:'tabs.home.learn'})"><img src="../img/Home_Banner.jpg" alt="" /></a>
 				</ion-slide>
 				<ion-slide>
-					<a href="#/play/4"><img href="#/play/1" src="../img/List_Act_1.jpg" alt="" /></a>
+					<a ui-sref="play({homeId: '1',playId: '1', view:'tabs.home.learn'})"><img href="#/play/1" src="../img/List_Act_1.jpg" alt="" /></a>
 				</ion-slide>
 				<ion-slide>
-					<a href="#/play/5"><img href="#/play/2" src="../img/List_Act_3.jpg" alt="" /></a>
+					<a ui-sref="play({homeId: '2',playId: '2', view:'tabs.home.learn'})"><img href="#/play/2" src="../img/List_Act_3.jpg" alt="" /></a>
 				</ion-slide>
 			</ion-slide-box>
 		</div>
 		<!--精品推荐列表-->
 		<ion-list class="h_list">
 			<p class="h_recommend">精选推荐</p>
-			<ion-item ng-repeat="item in items2" class="item item-thumbnail-left"  ui-sref="liveprofile({liveId:item.id,view:'tabs.home.watch'})">
+			<ion-item ng-repeat="item in items2" class="item item-thumbnail-left" ui-sref="liveprofile({liveprofileId:item.id,view:'tabs.home.learn'})">
 				<img ng-src={{item.imgUrl}} />
 				<h2>{{item.title}}</h2>
 				<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>

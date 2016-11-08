@@ -41,7 +41,7 @@ k==kong
 						<ion-content scroll-height2>
 							<div class="k_lookedList myVedios">
 								<ion-list>
-									<ion-item ng-repeat="myvedio in myVedios" href="#/tab/{{myvedio.id}}" class="item-thumbnail-left">
+									<ion-item ng-repeat="myvedio in myVedios" ui-sref="play({myId: myvedio.id,playId:myvedio.id, view:'tabs.my'})" class="item-thumbnail-left">
 										<img ng-src={{myvedio.imgUrl}} />
 										<h2>{{myvedio.title}}</h2>
 										<p><i>{{myvedio.name}}</i><i> {{myvedio.designation}}</i></p>
@@ -56,7 +56,7 @@ k==kong
 						<ion-content ng-controller="MyLookedController" scroll-height2>
 							<div class="k_lookedList myLooked">
 								<ion-list>
-									<ion-item ng-repeat="myLookedVedio in myLookedVedios"  href="#/tab/{{myLookedVedio.id}} class="item-thumbnail-left">
+									<ion-item ng-repeat="myLookedVedio in myLookedVedios" ui-sref="play({myId: myLookedVedio.id,playId:myLookedVedio.id, view:'tabs.my'})" class="item-thumbnail-left">
 										<img ng-src={{myLookedVedio.imgUrl}} />
 										<h2>{{myLookedVedio.title}}</h2>
 										<p><i>{{myLookedVedio.name}}</i><i> {{myLookedVedio.designation}}</i></p>

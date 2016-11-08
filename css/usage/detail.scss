@@ -158,10 +158,17 @@
         }
     }
     .bar-footer {
+        &.closed{
+            background: #838e9f;
+        }
+        &.beginSoon{
+            background: #eeaa54;
+        }
         background: #de4040;
         height: 50px;
         .title {
-            
+            height: 50px;
+            line-height: 50px;
             color: #fff;
         }
     }
