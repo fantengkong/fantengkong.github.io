@@ -10622,7 +10622,8 @@ html {
   .liveprofile ion-content .list .liveprofile_enrollment {
     padding: 0 1.6rem;
     height: 24px;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
     .liveprofile ion-content .list .liveprofile_enrollment span {
       display: inline-block;
       overflow: hidden;
@@ -10630,11 +10631,15 @@ html {
       height: 24px;
       border-radius: 5px; }
     .liveprofile ion-content .list .liveprofile_enrollment .people_num {
+      position: absolute;
+      top: 0;
+      height: 24px;
       width: auto;
       color: #fe6700;
-      padding: 5px 8px;
-      line-height: 14px;
-      background: #f4f4f4; }
+      padding: 0 8px;
+      line-height: 24px;
+      background: #f4f4f4;
+      margin: 0 4px; }
   .liveprofile ion-content .list .liveprofile_keywords {
     padding: 1.4rem 1.6rem; }
     .liveprofile ion-content .list .liveprofile_keywords i {
