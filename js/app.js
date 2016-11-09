@@ -146,7 +146,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
     //配置'播放页面'的路由
     .state('play', {
-      url: '/:view/play/:playId/:myId',
+      url: '/:view/:view2/play/:playId/:myId/:homeId',
       cache: false,
       params: {
       	'playId': null,

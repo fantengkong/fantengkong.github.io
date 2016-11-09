@@ -155,14 +155,10 @@
                     border-radius: 5px;
                 }
                 .people_num{
-                    border-radius: 5px;
-                    display: inline-block;
-                    overflow: hidden;
-                    height: 24px;
                     width: auto;
                     color: #fe6700;
-                    padding: 0 8px;
-                    line-height: 24px;
+                    padding: 5px 8px;
+                    line-height: 14px;
                     background: #f4f4f4;
                 }
             }
@@ -345,7 +341,8 @@
             width: 100%;
             height: 12rem;
             overflow: visible;
-            background: $color!important;
+            background: url(../../img/background/speaker_bg.jpg);
+            background-size: 100% 100%;
             margin-bottom: 4.4rem;
             .item {
                 background: none;

@@ -31,7 +31,7 @@ starterCtrls
   	/*显示更多*/
   	$scope.display = false;
   	$scope.showMore = function(){
-  		if($scope.display != false){
+  		if($scope.display == false){
   			$(".showMore i").css('transform','rotate(180deg)');
   			$scope.display = !$scope.display;
   		}else{
