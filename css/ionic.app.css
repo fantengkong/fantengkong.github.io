@@ -9677,7 +9677,8 @@ html {
   border-width: 0;
   line-height: 32px; }
 .tab_home .h_center.bar {
-  padding-left: 0; }
+  padding-left: 0;
+  border-bottom: 1px solid #ddd; }
 .tab_home .h_center.has-header {
   top: 40px; }
 .tab_home .h_center .scroll {
@@ -9688,7 +9689,7 @@ html {
     font-size: 12px;
     line-height: 20px;
     min-height: 22px;
-    margin: 10px 0 2px 1.6rem;
+    margin: 9px 0 2px 1.6rem;
     color: #55473e;
     border: none; }
     .tab_home .h_center .scroll .button:last-child {
@@ -9704,7 +9705,7 @@ html {
   display: block;
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 1px;
   width: 40px;
   height: 40px;
   z-index: 1;
@@ -9724,12 +9725,12 @@ html {
 .tab_home .h_banner {
   padding: 1.6rem 1.6rem 1rem; }
   .tab_home .h_banner .slider-pager .slider-pager-page {
-    margin: 0;
+    margin: 0 1px;
     width: 12px; }
   .tab_home .h_banner .slider-pager {
     bottom: 10px; }
   .tab_home .h_banner .slider-pager-page {
-    font-size: 6px;
+    font-size: 10px;
     color: #fff;
     filter: alpha(opacity=60);
     -moz-opacity: 0.6;
@@ -9769,7 +9770,8 @@ html {
     color: #2a2a2a; }
   .tab_home .h_list .item-content p {
     padding-top: 1.1rem;
-    color: #aba6a0; }
+    color: #aba6a0;
+    font-size: 12px; }
     .tab_home .h_list .item-content p .h_camera {
       display: inline-block;
       float: right; }
@@ -9860,7 +9862,7 @@ html {
       padding: 2px 10px;
       border-radius: 4px 0 4px 0; }
     .tab-activity ion-content .list .item div .foreshow {
-      background-color: #67df6b; }
+      background-color: #4384e9; }
     .tab-activity ion-content .list .item div .startTime {
       background-color: #4384e9; }
       .tab-activity ion-content .list .item div .startTime .k-time {
@@ -10209,7 +10211,7 @@ html {
       .k_play .p_content .p_info .p_title span i {
         display: block;
         float: right;
-        color: #98a4b8;
+        color: #b9b2aa;
         font-size: 1.6rem; }
     .k_play .p_content .p_info .p_visitor {
       color: #d6dbe2;
@@ -10217,9 +10219,11 @@ html {
       padding: 1rem 0; }
       .k_play .p_content .p_info .p_visitor i {
         padding: 0 1px;
-        font-size: 14px; }
+        font-size: 14px;
+        color: #a29f9a; }
         .k_play .p_content .p_info .p_visitor i.icon {
-          font-size: 11px; }
+          font-size: 11px;
+          color: #e8e7e5; }
     .k_play .p_content .p_info .p_major {
       padding-bottom: 1.4rem; }
       .k_play .p_content .p_info .p_major i {
@@ -10301,7 +10305,7 @@ html {
   .k_play .p_content .p_vList .item-icon-right .icon {
     font-size: 22px; }
   .k_play .p_content .p_vList .list {
-    padding: 0 1.6rem; }
+    padding: 0 1.6rem 3rem; }
     .k_play .p_content .p_vList .list .item {
       border-radius: 5px;
       background: #fff2ea;
@@ -10325,7 +10329,7 @@ html {
           font-weight: bold; }
         .k_play .p_content .p_vList .list .item .p_intro .p_time {
           font-weight: normal;
-          color: #aab0b8;
+          color: #92908d;
           font-size: 12px;
           line-height: 1.6rem; }
       .k_play .p_content .p_vList .list .item i {
@@ -10492,14 +10496,14 @@ html {
     padding: 1rem 0 2rem;
     line-height: 2rem;
     font-size: 1.4rem;
-    color: #98a4b8; }
+    color: #a39e98; }
   .k_classify ion-content .button {
     line-height: 2rem;
     font-size: 1.4rem;
     padding: .6rem 1rem;
     min-height: 0;
     min-width: 0;
-    color: #8bb3f3;
+    color: #54463d;
     background: #f4f4f4;
     margin-right: 10px;
     margin-bottom: 1rem;
@@ -10712,7 +10716,7 @@ html {
       line-height: 5.6rem;
       text-align: right;
       font-size: 1.6rem;
-      color: #98a4b8; }
+      color: #b9b2aa; }
   .liveprofile ion-content .list .liveprofile_info {
     padding: 0 1.6rem;
     margin: 0; }
@@ -10813,7 +10817,7 @@ html {
         border: 2px solid #fff;
         box-sizing: border-box;
         border-radius: 5px;
-        box-shadow: 0 0 5px #d1d1d1; }
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
       .liveprofile .card .p_background .p_people h2 {
         line-height: 2.2rem;
         color: #fff;

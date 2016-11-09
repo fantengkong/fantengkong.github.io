@@ -1,7 +1,7 @@
 starterCtrls
   .controller('DetailController',['$scope','$state','$stateParams','$http', '$ionicHistory',function ($scope, $state, $stateParams, $http, $ionicHistory) {
     /*底部栏状态*/
-    $scope.attend = true;
+    $scope.attend = false;
     $scope.close = false;
     $scope.begin_soon = false;
     

@@ -85,7 +85,7 @@
                         display: block;
                         
                         float: right;
-                        color: #98a4b8;
+                        color: #b9b2aa;
                         font-size: 1.6rem;
                     }
                 }
@@ -102,8 +102,10 @@
                 i {
                     padding: 0 1px;
                     font-size: 14px;
+                    color: #a29f9a;
                     &.icon{
                         font-size: 11px;
+                        color: #e8e7e5;
                     }
                 }
             }
@@ -221,7 +223,7 @@
             }
             .list {
                 
-                padding: 0 1.6rem;
+                padding: 0 1.6rem 3rem;
                 .item {
                     border-radius: 5px;
                     background: #fff2ea;
@@ -251,7 +253,7 @@
                         }
                         .p_time {
                             font-weight: normal;
-                            color: #aab0b8;
+                            color: #92908d;
                             font-size: 12px;
                             line-height: 1.6rem;
                         }

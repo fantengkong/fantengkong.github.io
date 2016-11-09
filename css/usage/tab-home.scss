@@ -59,6 +59,7 @@
     .h_center {
         &.bar{
           padding-left: 0;  
+          border-bottom: 1px solid #ddd;
         }
         &.has-header{
             top: 40px;
@@ -71,7 +72,7 @@
                 font-size: 12px;
                 line-height: 20px;
                 min-height: 22px;
-                margin: 10px 0 2px 1.6rem;
+                margin: 9px 0 2px 1.6rem;
                 color: #55473e;
                 border: none; 
                 &:last-child{
@@ -94,7 +95,7 @@
             display: block;
             position: absolute;
             right: 0;
-            bottom: 0;
+            bottom: 1px;
             width: 40px;
             height: 40px;
             z-index: 1;
@@ -119,14 +120,14 @@
     .h_banner {
         padding: 1.6rem 1.6rem 1rem;
         .slider-pager .slider-pager-page{
-            margin: 0;
+            margin: 0 1px;
             width: 12px;
         }
         .slider-pager{
             bottom: 10px;
         }
         .slider-pager-page{
-            font-size: 6px;
+            font-size: 10px;
             color: #fff;
             filter:alpha(opacity=60);
              -moz-opacity:0.6;
@@ -176,6 +177,7 @@
             p {
                 padding-top: 1.1rem;
                 color: #aba6a0;
+                font-size: 12px;
                 .h_camera {
                     .icon {
                         color: #e7e6e4;

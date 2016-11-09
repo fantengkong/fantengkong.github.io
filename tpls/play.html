@@ -10,6 +10,7 @@
 		<div ng-click="pBack()" class="p_back">
 			<i class="icon iconfont">&#xe64e;</i>
 		</div>
+		<!--播放-->
 		<div ng-click="play()" ng-if="playSignShow" class="p_sign">
 			<i class="iconfont">&#xe64c;</i>
 		</div>
@@ -54,7 +55,7 @@
 			<span><i class="card_show icon col ion-chevron-right col-10 a_go"></i></span>
 		</div>
 		<div class="p_set" ng-if="Video">
-			<b>视频选集</b>(<i>5</i>)
+			<b>视频选集</b>(<i ng-bind="playListNum"></i>)
 		</div>
 		<div class="p_vList" ng-if="Video">
 			<ion-list class="p_list">
