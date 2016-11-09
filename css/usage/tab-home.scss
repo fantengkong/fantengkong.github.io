@@ -38,7 +38,7 @@
         bottom: 50px;
     }
     .tab-item-active{
-        font-weight: 600;
+        font-weight: bolder;
     }
     //回到顶部
     .scrollToTop {
@@ -148,10 +148,8 @@
     }
     .h_list {
         .h_recommend{
-            
                 margin: 0;
-                font-size: 15px;
-            
+                font-size: 14px;
             padding-left: 1.6rem;
             font-weight: 600;
             color: #333;

@@ -147,19 +147,25 @@
 //              margin-top: .5rem 0 1.4rem;
                 height: 24px;
                 overflow: hidden;
+                position: relative;
                 span{
                     display: inline-block;
                     overflow: hidden;
                     width: 24px;
                     height: 24px;
                     border-radius: 5px;
+                    
                 }
                 .people_num{
+                    position: absolute;
+                    top: 0;
+                    height: 24px;
                     width: auto;
                     color: #fe6700;
-                    padding: 5px 8px;
-                    line-height: 14px;
+                    padding: 0 8px;
+                    line-height: 24px;
                     background: #f4f4f4;
+                    margin: 0 4px;
                 }
             }
             .liveprofile_keywords{
@@ -195,6 +201,7 @@
                 border: 1px solid #eaeaea;
                 border-right: none;
                 border-left: none;
+                height: 7.6rem;
                 .col {
                     padding: 0;
                 }
@@ -207,31 +214,32 @@
                 }
                 .a_message {
                     p {
-                        margin-bottom: .8rem;
+                        margin-top: .4rem;
+                        margin-bottom: .5rem;
                         font-size: 1.2rem;
                         .a_name {
-                            font-weight: bold;
+                            font-weight: 600;
                             font-size: 1.6rem;
                             padding-right: .8rem;
                             color: #2a2a2a;
                         }
                         .a_title {
-                            color: #aab0b8;
+                            color: #878787;
                         }
                         .a_place {
-                            color: #8d939d;
+                            color: #878787;
                             padding-right: .8rem;
                         }
                         .a_office {
-                            color: #8d939d;
+                            color: #878787;
                         }
                     }
                 }
                 .a_go {
+                    line-height: 5.6rem;
                     text-align: right;
                     font-size: 1.6rem;
                     color: #98a4b8;
-                    padding-top: 2.4rem;
                 }
             }      
             .liveprofile_info {
@@ -248,6 +256,7 @@
                     p {
                         line-height: 24px;
                         font-size: 14px;
+                        font-weight: 100;
                     }
                 }
                 .i_list {
@@ -354,6 +363,7 @@
                 padding: 0;
                 border: none;
                 padding: 9rem 0 0.4rem 10.6rem;
+                
                 img {
                     z-index: 1000;
                     top: 7rem;
@@ -361,6 +371,7 @@
                     border: 2px solid #fff;
                     box-sizing: border-box;
                     border-radius: 5px;
+                    box-shadow: 0 0 5px #d1d1d1;
                 }
                 h2 {
                     line-height: 2.2rem;

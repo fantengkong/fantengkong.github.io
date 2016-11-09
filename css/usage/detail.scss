@@ -52,23 +52,18 @@
                 line-height: 1.4;
                 color: #2b2a2a;
             }
-            .d_time,
-            .d_position {
+            .d_time_place{
+                span{
+                    display: block;
+                    margin-bottom: 5px;
+                    clear: both;
+                }
+                padding: 2rem 0 0;
+                color: #888;
+                line-height: 20px;
                 font-size: 14px;
-                padding: 14px 0;
-                i {
-                    padding-right: 12px;
-                    color: #d6dbe2;
-                }
-                b {
-                    color: #5b5b5b;
-                    font-weight: 100;
-                }
-                .row {
-                    padding: 0;
-                }
-                border-bottom: dashed 1px #eaeaea;
-            }
+                clear: both;
+            } 
             .d_info {
                 margin: 0;
                 dt {
@@ -162,7 +157,7 @@
             background: #838e9f;
         }
         &.beginSoon{
-            background: #eeaa54;
+            background: #838f9f;
         }
         background: #de4040;
         height: 50px;

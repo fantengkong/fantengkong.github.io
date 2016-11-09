@@ -31,6 +31,18 @@
             left: 1.6rem;
             top: 1rem;
         }
+        .play_fullScreen {
+            position: absolute;
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.5);
+            line-height: 3.2rem;
+            text-align: center;
+            color: #fff;
+            right: 1.6rem;
+            bottom: 1rem;
+        }
         .p_sign {
             position: absolute;
             width: 8.8rem;

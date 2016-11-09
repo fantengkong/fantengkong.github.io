@@ -22,14 +22,12 @@ d==detail
 			<!--活动页标题-->
 			<p class="d_title">相约北京 | 第二届精准医疗与基因测序大会</p>
 			<!--活动时间地点-->
-			<p class="d_time">
-				<span class="row">
-					<i class=".col-5 icon ion-android-time"></i><b>7月24日 9:00-7月25日 17:30</b>
-				</span>				
-			</p>
-			<p class="d_position">
-				<span class="row">
-					<i class=".col-5 icon ion-ios-location-outline"></i><b>北京 东城区 王府井大街 协和学术会堂 (帅府园胡同协和医院西门对面)</b>
+			<p class="d_time_place" ng-if="!speaker">
+				<span>
+					<i>会议时间：</i><i>7月24日 9:00-7月25日 17:30</i>
+				</span>
+				<span>
+					<i>会议地点：</i><i>北京 东城区 王府井大街 协和学术会堂 (帅府园胡同协和医院西门对面)</i>
 				</span>
 			</p>
 			<!--活动介绍-->

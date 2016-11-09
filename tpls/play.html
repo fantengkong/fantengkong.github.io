@@ -13,6 +13,10 @@
 		<div ng-click="play()" ng-if="playSignShow" class="p_sign">
 			<i class="iconfont">&#xe64c;</i>
 		</div>
+		<!--放大按钮-->
+		<div class="play_fullScreen" ng-if="!playSignShow">
+			<i class="icon iconfont">&#xe662;</i>
+		</div>
 		<img ng-src={{item2.imgUrl}} alt="" />
 	</div>
 	<ion-content class="p_content">		

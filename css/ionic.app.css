@@ -9662,7 +9662,7 @@ html {
   top: 44px;
   bottom: 50px; }
 .tab_home .tab-item-active {
-  font-weight: 600; }
+  font-weight: bolder; }
 .tab_home .scrollToTop {
   height: 32px;
   width: 32px;
@@ -9747,7 +9747,7 @@ html {
     border-radius: 5px; }
 .tab_home .h_list .h_recommend {
   margin: 0;
-  font-size: 15px;
+  font-size: 14px;
   padding-left: 1.6rem;
   font-weight: 600;
   color: #333; }
@@ -9872,6 +9872,12 @@ html {
 
 .tab-my p {
   margin: 0; }
+.tab-my .tabs-color-assertive .tab-item {
+  color: #a49f99; }
+.tab-my .tabs-striped.tabs-color-assertive .tab-item.tab-item-active {
+  color: #ff6600;
+  font-size: 15px;
+  font-weight: 600; }
 .tab-my .k_nologin .k_no {
   width: 100%;
   font-weight: 600;
@@ -9880,8 +9886,12 @@ html {
   background: url(../../img/background/my_bg.jpg);
   background-size: 100% 100%; }
   .tab-my .k_nologin .k_no p {
+    font-size: 14px;
+    font-weight: 600;
     padding: 9rem 0; }
     .tab-my .k_nologin .k_no p .button {
+      font-weight: 600;
+      font-size: 14px;
       min-width: 78px;
       min-height: 30px;
       vertical-align: baseline;
@@ -9891,7 +9901,7 @@ html {
       margin-left: 10px; }
 .tab-my .k_nologin .k_prompt {
   color: #d1d1d1;
-  font-weight: bold;
+  font-weight: 100;
   text-align: center; }
   .tab-my .k_nologin .k_prompt .k_play {
     padding: 4.8rem 0 2rem 0; }
@@ -9954,13 +9964,14 @@ html {
   padding: 1.6rem 0 0 1.6rem;
   margin: 0; }
 .tab-my .k_lookedList {
+  padding-top: 1.3rem;
   border: none; }
   .tab-my .k_lookedList .item {
     border-style: none; }
     .tab-my .k_lookedList .item .item-content {
       padding-left: 14rem;
       padding-right: 1.6rem;
-      padding-top: 8px; }
+      padding-top: 1.2rem; }
     .tab-my .k_lookedList .item img {
       position: absolute;
       border-radius: 4px;
@@ -9973,10 +9984,10 @@ html {
     .tab-my .k_lookedList .item h2 {
       white-space: normal; }
     .tab-my .k_lookedList .item p {
-      margin-top: 1.6rem;
+      bottom: 1.8rem;
       color: #aba6a0;
       font-size: 12px;
-      position: relative; }
+      position: absolute; }
       .tab-my .k_lookedList .item p span {
         position: absolute;
         right: 0; }
@@ -10040,22 +10051,16 @@ html {
       font-stretch: normal;
       line-height: 1.4;
       color: #2b2a2a; }
-    .k_detail ion-content .list .d_time,
-    .k_detail ion-content .list .d_position {
+    .k_detail ion-content .list .d_time_place {
+      padding: 2rem 0 0;
+      color: #888;
+      line-height: 20px;
       font-size: 14px;
-      padding: 14px 0;
-      border-bottom: dashed 1px #eaeaea; }
-      .k_detail ion-content .list .d_time i,
-      .k_detail ion-content .list .d_position i {
-        padding-right: 12px;
-        color: #d6dbe2; }
-      .k_detail ion-content .list .d_time b,
-      .k_detail ion-content .list .d_position b {
-        color: #5b5b5b;
-        font-weight: 100; }
-      .k_detail ion-content .list .d_time .row,
-      .k_detail ion-content .list .d_position .row {
-        padding: 0; }
+      clear: both; }
+      .k_detail ion-content .list .d_time_place span {
+        display: block;
+        margin-bottom: 5px;
+        clear: both; }
     .k_detail ion-content .list .d_info {
       margin: 0; }
       .k_detail ion-content .list .d_info dt h2 {
@@ -10126,7 +10131,7 @@ html {
     .k_detail .bar-footer.closed {
       background: #838e9f; }
     .k_detail .bar-footer.beginSoon {
-      background: #eeaa54; }
+      background: #838f9f; }
     .k_detail .bar-footer .title {
       height: 50px;
       line-height: 50px;
@@ -10159,6 +10164,17 @@ html {
     color: #fff;
     left: 1.6rem;
     top: 1rem; }
+  .k_play .p_wrap .play_fullScreen {
+    position: absolute;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    line-height: 3.2rem;
+    text-align: center;
+    color: #fff;
+    right: 1.6rem;
+    bottom: 1rem; }
   .k_play .p_wrap .p_sign {
     position: absolute;
     width: 8.8rem;
@@ -10668,7 +10684,8 @@ html {
     padding: 1rem 1.6rem;
     border: 1px solid #eaeaea;
     border-right: none;
-    border-left: none; }
+    border-left: none;
+    height: 7.6rem; }
     .liveprofile ion-content .list .live_people .col {
       padding: 0; }
     .liveprofile ion-content .list .live_people .a_portrait img {
@@ -10676,25 +10693,26 @@ html {
       height: 5.6rem;
       border-radius: 50%; }
     .liveprofile ion-content .list .live_people .a_message p {
-      margin-bottom: .8rem;
+      margin-top: .4rem;
+      margin-bottom: .5rem;
       font-size: 1.2rem; }
       .liveprofile ion-content .list .live_people .a_message p .a_name {
-        font-weight: bold;
+        font-weight: 600;
         font-size: 1.6rem;
         padding-right: .8rem;
         color: #2a2a2a; }
       .liveprofile ion-content .list .live_people .a_message p .a_title {
-        color: #aab0b8; }
+        color: #878787; }
       .liveprofile ion-content .list .live_people .a_message p .a_place {
-        color: #8d939d;
+        color: #878787;
         padding-right: .8rem; }
       .liveprofile ion-content .list .live_people .a_message p .a_office {
-        color: #8d939d; }
+        color: #878787; }
     .liveprofile ion-content .list .live_people .a_go {
+      line-height: 5.6rem;
       text-align: right;
       font-size: 1.6rem;
-      color: #98a4b8;
-      padding-top: 2.4rem; }
+      color: #98a4b8; }
   .liveprofile ion-content .list .liveprofile_info {
     padding: 0 1.6rem;
     margin: 0; }
@@ -10706,7 +10724,8 @@ html {
       color: #333; }
     .liveprofile ion-content .list .liveprofile_info dt p {
       line-height: 24px;
-      font-size: 14px; }
+      font-size: 14px;
+      font-weight: 100; }
     .liveprofile ion-content .list .liveprofile_info .i_list {
       padding: 1rem 0 1.6rem; }
       .liveprofile ion-content .list .liveprofile_info .i_list li {
@@ -10793,7 +10812,8 @@ html {
         left: 1.6rem;
         border: 2px solid #fff;
         box-sizing: border-box;
-        border-radius: 5px; }
+        border-radius: 5px;
+        box-shadow: 0 0 5px #d1d1d1; }
       .liveprofile .card .p_background .p_people h2 {
         line-height: 2.2rem;
         color: #fff;
@@ -10878,8 +10898,6 @@ html {
     top: 1rem; }
   .live .l_play .live_fullScreen {
     bottom: 1rem; }
-    .live .l_play .live_fullScreen i {
-      font-size: 20px; }
   .live .l_play .live_finish {
     position: absolute;
     width: 8.8rem;
@@ -10895,6 +10913,8 @@ html {
     right: 0;
     bottom: 0; }
     .live .l_play .live_finish i {
+      position: relative;
+      top: 6px;
       font-size: 4rem; }
     .live .l_play .live_finish p {
       font-size: 1.4rem;
@@ -10920,7 +10940,7 @@ html {
   .live .l_player img {
     float: left;
     margin: 3px;
-    border: 2px solid #fff;
+    border: 1.5px solid #fff;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
@@ -10963,7 +10983,7 @@ html {
       display: block;
       float: left;
       margin-right: 1.6rem;
-      border: 2px solid #fff; }
+      border: 1.5px solid #fff; }
     .live ion-content .msgContent p {
       display: inline-block;
       position: relative;
@@ -11013,7 +11033,7 @@ html {
   .live .bar-footer .title {
     height: 50px;
     line-height: 50px; }
-  .live .bar-footer .bar-calm {
+  .live .bar-footer.bar-calm {
     background: #838f9f; }
 .live .l_footer.bar-footer {
   height: 50px; }
