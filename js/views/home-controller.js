@@ -5,24 +5,16 @@ starterCtrls
 			$ionicScrollDelegate.$getByHandle('h_content').scrollTop(true);
 			$(".scrollToTop").hide();
 		};
-		
 		/*回到顶部按钮显示消失*/
 		$scope.getPos = function() {
-			var d_top = $ionicScrollDelegate.$getByHandle('h_content').getScrollPosition().top;
-			if(d_top > 10) {
+			$scope.d_top = parseInt($ionicScrollDelegate.$getByHandle('h_content').getScrollPosition().top);
+			if($scope.d_top > 10) {
 				$(".scrollToTop").show();
 			} else {
 				$(".scrollToTop").hide();
 			}
 		}
-		/*获取假数据*/
-		/*$http.get('mock/home_list.json')
-			.then(
-				function(res) {
-					$scope.items = res.data;
-				}
-			);*/
-			
+		
 		/*获取假数据*/	
 		$scope.items1 = [];
 		$scope.items2 = [];
@@ -44,17 +36,97 @@ starterCtrls
 				
 			);	
 		/*保存数据*/	
-		
 		$scope.items11=	$scope.items1;
 		$scope.items22=	$scope.items2;
 		$scope.items33=	$scope.items3;	
-			/*从后台获取数据*/
-/*		$http.get('./api/home_list.php?pageNo=0')
+	}])
+	.controller('home_learnCtrl', ['$state', '$scope', '$ionicScrollDelegate', '$http', '$timeout', function($state, $scope, $ionicScrollDelegate, $http, $timeout) {
+		
+		$scope.openLearnClassify = function(){
+			$state.go("classify.learn",{},{reload:true});
+		}
+
+		if(!JSON.parse( localStorage.getItem("learn") )){
+			$scope.navItems2 = [
+				{id: 0,name: "学知识",selected: true},
+				{id: 1,name: "基因组",selected: true}, 
+				{id: 2,name: "癌症",selected: true}, 
+				{id: 3,name: "单细胞",selected: true}
+			];
+		}else{
+			$scope.navItems2=[];
+			$scope.learn=JSON.parse( localStorage.getItem("learn") );
+			for(var i=0;i<$scope.learn.length;i++){
+				if($scope.learn[i].selected == true){
+					$scope.navItems2.push($scope.learn[i]);
+				}
+			}
+		}
+		/*初始默认推荐按钮*/
+		$scope.activeNavLearn = -1;
+		$scope.isActive2 = true;
+		/*点击看大会推荐*/
+		$scope.learnRecommend = function(){
+			$ionicScrollDelegate.$getByHandle('h_content').scrollTop(true);
+			$scope.activeNavLearn = -1;
+			$scope.isActive2 = true;
+			$scope.num2 = 0;
+    	$scope.learnDataLoad = true;
+			//点击加载数据
+    	$http.get('./mock/home/home_list.json')
+			.then(
+				function(res) {					
+					$scope.items2=$scope.items22;
+				}
+			);
+		}
+		//点击二级导航按钮加载数据
+		$scope.navLearn = function(index){
+			$ionicScrollDelegate.$getByHandle('h_content').scrollTop(true);
+    	$scope.activeNavLearn = index;
+    	$scope.isActive2 = false;
+    	$scope.num2 = 0;
+    	$scope.learnDataLoad = true;
+    	
+    	//点击加载数据
+    	$http.get('./mock/home/home_list.json')
 			.then(
 				function(res) {
-					$scope.items = res.data;
+					$scope.item2=$scope.items22[(index%10)].id;
+					$scope.items2=[];
+					$scope.items2.push(res.data[$scope.item2]);
 				}
-			);*/
+			);
+		}
+		/*上拉加载更多*/
+			/*每次加载的行数*/
+			$scope.num2 = 0;
+			/*是否加载*/
+			$scope.learnDataLoad = true;
+		$scope.loadMore = function() {
+			if(!$("ion-infinite-scroll i").html()){
+				$("ion-infinite-scroll").prepend("<i>高能加载中</i>").css("color","#b0aba8");
+			}
+			$timeout(function(){
+				$http.get('./mock/home_more-item.json').success(function(items) {
+					/*总加载次数*/
+					$scope.time = Math.ceil(items.length/10);
+					if($scope.num2 == $scope.time){
+							$("ion-infinite-scroll").html("没有更多加载了");
+							$scope.loadMore = false;
+						}
+					$scope.items2 = $scope.items2.concat(items.slice( (0+$scope.num2*20) , (9+$scope.num2*20) ) );
+					$scope.num2++;
+					$scope.$broadcast('scroll.infiniteScrollComplete');
+				})
+			},1000)
+			
+				
+		};
+		$scope.$on('scroll.inifiteScrollComplete', function() {
+			$scope.loadMore();
+		});
+		
 	}])
 	.controller('home_watchCtrl', ['$state', '$scope', '$ionicScrollDelegate', '$http', '$timeout', function($state, $scope, $ionicScrollDelegate, $http, $timeout) {
 		$scope.watchDataLoad = false;
@@ -88,6 +160,7 @@ starterCtrls
 		
 		/*点击看大会推荐*/
 		$scope.watchRecommend = function(){
+			$ionicScrollDelegate.$getByHandle('h_content').scrollTop();
 			$scope.activeNavWatch = -1;
 			$scope.isActive1 = true;
     	$scope.num1 = 0;
@@ -99,11 +172,11 @@ starterCtrls
 					$scope.items1=$scope.items11;
 				}
 			);
-			$ionicScrollDelegate.$getByHandle('h_content').scrollTop(true);
 		}
 		
 		//点击二级导航按钮加载数据
 		$scope.navWatch = function(index){
+			$ionicScrollDelegate.$getByHandle('h_content').scrollTop();
     	$scope.activeNavWatch = index;
     	$scope.isActive1 = false;
     	$scope.num1 = 0;
@@ -116,7 +189,6 @@ starterCtrls
 					$scope.items1.push(res.data[$scope.item1]);
 				}
 			);
-			$ionicScrollDelegate.$getByHandle('h_content').scrollTop(true);
 		}
 		
 		/*上拉加载更多*/
@@ -125,98 +197,23 @@ starterCtrls
 		/*是否加载*/
 		$scope.watchDataLoad = true;
 		$scope.loadMore = function() {
+			if(!$("ion-infinite-scroll i").html()){
+				$("ion-infinite-scroll").prepend("<i>高能加载中</i>").css("color","#b0aba8");
+			}
 			$timeout(function(){
 				$http.get('./mock/home_more-item.json').success(function(items) {
 					/*总加载次数*/
 					$scope.time = Math.ceil(items.length/10);
 					if($scope.num1 == $scope.time){
-						$scope.watchDataLoad = false;
+						$("ion-infinite-scroll").html("没有更多加载了");
+						$scope.loadMore = false;
 					}
 					$scope.items1 = $scope.items1.concat(items.slice( (0+$scope.num1*10) , (9+$scope.num1*10) ) );
 					$scope.num1++;
 					$scope.$broadcast('scroll.infiniteScrollComplete');
 				})
-			},2000)
+			},1000)
 				
-		};
-		$scope.$on('scroll.inifiteScrollComplete', function() {
-			$scope.loadMore();
-		});
-	}])
-	.controller('home_learnCtrl', ['$state', '$scope', '$ionicScrollDelegate', '$http', '$timeout', function($state, $scope, $ionicScrollDelegate, $http, $timeout) {
-		
-		$scope.openLearnClassify = function(){
-			$state.go("classify.learn",{},{reload:true});
-		}
-		
-		if(!JSON.parse( localStorage.getItem("learn") )){
-			$scope.navItems2 = [
-				{id: 0,name: "学知识",selected: true},
-				{id: 1,name: "基因组",selected: true}, 
-				{id: 2,name: "癌症",selected: true}, 
-				{id: 3,name: "单细胞",selected: true}
-			];
-		}else{
-			$scope.navItems2=[];
-			$scope.learn=JSON.parse( localStorage.getItem("learn") );
-			for(var i=0;i<$scope.learn.length;i++){
-				if($scope.learn[i].selected == true){
-					$scope.navItems2.push($scope.learn[i]);
-				}
-			}
-		}
-		/*初始默认推荐按钮*/
-		$scope.activeNavLearn = -1;
-		$scope.isActive2 = true;
-		/*点击看大会推荐*/
-		$scope.learnRecommend = function(){
-			$scope.activeNavLearn = -1;
-			$scope.isActive2 = true;
-			$scope.num2 = 0;
-    	$scope.learnDataLoad = true;
-			//点击加载数据
-    	$http.get('./mock/home/home_list.json')
-			.then(
-				function(res) {					
-					$scope.items2=res.data;
-				}
-			);
-			$ionicScrollDelegate.$getByHandle('h_content').scrollTop(true);
-		}
-		//点击二级导航按钮加载数据
-		$scope.navLearn = function(index){
-    	$scope.activeNavLearn = index;
-    	$scope.isActive2 = false;
-    	$scope.num2 = 0;
-    	$scope.learnDataLoad = true;
-    	
-    	//点击加载数据
-    	$http.get('./mock/home/home_list.json')
-			.then(
-				function(res) {
-					$scope.item2=$scope.items22[(index%10)].id;
-					$scope.items2=[];
-					$scope.items2.push(res.data[$scope.item2]);
-				}
-			);
-			$ionicScrollDelegate.$getByHandle('h_content').scrollTop(true);
-		}
-		/*上拉加载更多*/
-			/*每次加载的行数*/
-			$scope.num2 = 0;
-			/*是否加载*/
-			$scope.learnDataLoad = true;
-		$scope.loadMore = function() {
-			$http.get('./mock/home_more-item.json').success(function(items) {
-				/*总加载次数*/
-				$scope.time = Math.ceil(items.length/20);
-				if($scope.num2 == $scope.time){
-					$scope.learnDataLoad = false;
-				}
-				$scope.items2 = $scope.items2.concat(items.slice( (0+$scope.num2*20) , (9+$scope.num2*20) ) );
-				$scope.num2++;
-				$scope.$broadcast('scroll.infiniteScrollComplete');
-			})
 		};
 		$scope.$on('scroll.inifiteScrollComplete', function() {
 			$scope.loadMore();
@@ -258,7 +255,7 @@ starterCtrls
     	$http.get('./mock/home/home_list.json')
 			.then(
 				function(res) {					
-					$scope.items3=res.data;
+					$scope.items3=$scope.items33;
 				}
 			);
 			$ionicScrollDelegate.$getByHandle('h_content').scrollTop(true);
@@ -286,16 +283,23 @@ starterCtrls
 			/*是否加载*/
 			$scope.sayDataLoad = true;
 		$scope.loadMore = function() {
-			$http.get('./mock/home_more-item.json').success(function(items) {
-				/*总加载次数*/
-				$scope.time = Math.ceil(items.length/10);
-				if($scope.num3 == $scope.time){
-					$scope.sayDataLoad = false;
-				}
-				$scope.items3 = $scope.items3.concat(items.slice( (0+$scope.num3*10) , (9+$scope.num3*10) ) );
-				$scope.num3++;
-				$scope.$broadcast('scroll.infiniteScrollComplete');
-			})
+			if(!$("ion-infinite-scroll i").html()){
+				$("ion-infinite-scroll").prepend("<i>高能加载中</i>").css("color","#b0aba8");
+			}
+			$timeout(function(){
+				$http.get('./mock/home_more-item.json').success(function(items) {
+					/*总加载次数*/
+					$scope.time = Math.ceil(items.length/10);
+					if($scope.num3 == $scope.time){
+						$("ion-infinite-scroll").html("没有更多加载了");
+						$scope.loadMore = false;
+					}
+					$scope.items3 = $scope.items3.concat(items.slice( (0+$scope.num3*10) , (9+$scope.num3*10) ) );
+					$scope.num3++;
+					$scope.$broadcast('scroll.infiniteScrollComplete');
+				})
+			},1000)
+				
 		};
 		$scope.$on('scroll.inifiteScrollComplete', function() {
 			$scope.loadMore();

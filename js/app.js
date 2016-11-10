@@ -206,7 +206,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
     //配置直播简介页的路由
   	.state('liveprofile', {
-  		url: "/:view/liveprofile/:liveprofileId",
+  		url: "/:view/liveprofile/:liveprofileId/:liveId",
   		cache: false,
   		params:{
   			'liveprofileId': null,

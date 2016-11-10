@@ -22,7 +22,12 @@ starterCtrls
     	$state.go($scope.params.view);
     } 
     /*判断是否是专家*/
-    $scope.speaker = true;
+   	if($scope.params.view=="tabs.home.watch"){
+   		$scope.speaker = false;
+   	}else{
+   		$scope.speaker = true;
+   	}
+    
     /*直播专家信息显示*/
     $scope.cardShow = false;
     $scope.mesShow = function(){
@@ -62,16 +67,12 @@ starterCtrls
 				}
 			}
 		);
+		$scope.enterLive = false;
 		if($scope.params.liveId || $scope.params.liveId==0){
-			$scope.baoming="进入直播间";
-	    $(".signUp").css({"background":"#fb4831"});
+			$scope.enterLive = true;
 		}
 		
 		$scope.showAlert = function() {
-			if($scope.baoming == "进入直播间"){
-    		$state.go('live',{liveId: $scope.params.liveprofileId, view2: 'liveprofile', view: $scope.params.view });
-				return false;
-			}
 			$scope.data = {}
 	   	var myPopup = $ionicPopup.show({
 	    	title: '<i class="icon iconfont">&#xe657;</i>',
@@ -80,16 +81,20 @@ starterCtrls
 	     	buttons: []
 	   	});
 	   	myPopup.then(function(res) {
-	     	$scope.baoming="进入直播间";
-	     	$(".signUp").css({"background":"#fb4831"});
+	   		$scope.enterLive = true;
 	   	});
 	   	$timeout(function() {
-	      myPopup.close(); //由于某种原因3秒后关闭弹出
+	      myPopup.close(); //由于某种原因2秒后关闭弹出
 	   	}, 2000);
 	   	$scope.livePreview = false;
 	   	$scope.living = true;
 	   	$scope.followTJ = true;
+	   	$scope.enterLive = true;
 	 	};
+	 	/*进入直播间*/
+	 	$scope.gotoLive = function(){
+    		$state.go('live',{liveId: $scope.params.liveprofileId, view2: 'liveprofile', view: $scope.params.view });
+	 	}
 		/*关闭直播中*/
 		$scope.closeLiving = function(){
 			$scope.living = false;

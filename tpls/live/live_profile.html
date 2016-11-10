@@ -104,9 +104,13 @@ d==detail
 	<ion-footer-bar class="calm" ng-if="liveFinish">
 		<h1 class="title" ng-click="goHome()">直播结束</h1>
 	</ion-footer-bar>
-	<!--跳转到直播页-->
-	<ion-footer-bar class="signUp" ng-if="enterLive">
-		<h1 class="title" ng-bind="baoming" ng-click="showAlert()" nav-direction="forward">报名看直播</h1>
+	<!--报名看直播-->
+	<ion-footer-bar class="signUp" ng-if="!enterLive">
+		<h1 class="title" ng-click="showAlert()" nav-direction="forward">报名看直播</h1>
+	</ion-footer-bar>
+	<!--进入直播页-->
+	<ion-footer-bar class="bar-assertive" ng-if="enterLive">
+		<h1 class="title" ng-click="gotoLive()" nav-direction="forward">进入直播间</h1>
 	</ion-footer-bar>
 	<!--遮罩层-->
 	<div class="p_mask" ng-if="cardShow">

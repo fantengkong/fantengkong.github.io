@@ -18,19 +18,19 @@
 		<div class="h_banner">
 			<ion-slide-box auto-play="true" does-continue="true" show-pager="true">
 				<ion-slide>
-					<a nav-direction="forward" ui-sref="play({homeId: '0',playId: '0', view:'tabs.home.watch'})"><img src="../img/Home_Banner.jpg" alt="" /></a>
+					<a nav-direction="forward" ui-sref="play({homeId: '0',playId: '0', view:'tabs.home.say'})"><img src="../img/Home_Banner.jpg" alt="" /></a>
 				</ion-slide>
 				<ion-slide>
-					<a nav-direction="forward" ui-sref="play({homeId: '1',playId: '1', view:'tabs.home.watch'})"><img href="#/play/1" src="../img/List_Act_1.jpg" alt="" /></a>
+					<a nav-direction="forward" ui-sref="play({homeId: '1',playId: '1', view:'tabs.home.say'})"><img href="#/play/1" src="../img/List_Act_1.jpg" alt="" /></a>
 				</ion-slide>
 				<ion-slide>
-					<a nav-direction="forward" ui-sref="play({homeId: '2',playId: '2', view:'tabs.home.watch'})"><img href="#/play/2" src="../img/List_Act_3.jpg" alt="" /></a>
+					<a nav-direction="forward" ui-sref="play({homeId: '2',playId: '2', view:'tabs.home.say'})"><img href="#/play/2" src="../img/List_Act_3.jpg" alt="" /></a>
 				</ion-slide>
 				<ion-slide>
-					<a nav-direction="forward" ui-sref="play({homeId: '3',playId: '3', view:'tabs.home.watch'})"><img href="#/play/3" src="../img/List_Act_3.jpg" alt="" /></a>
+					<a nav-direction="forward" ui-sref="play({homeId: '3',playId: '3', view:'tabs.home.say'})"><img href="#/play/3" src="../img/List_Act_3.jpg" alt="" /></a>
 				</ion-slide>
 				<ion-slide>
-					<a nav-direction="forward" ui-sref="play({homeId: '4',playId: '4', view:'tabs.home.watch'})"><img href="#/play/4" src="../img/List_Act_3.jpg" alt="" /></a>
+					<a nav-direction="forward" ui-sref="play({homeId: '4',playId: '4', view:'tabs.home.say'})"><img href="#/play/4" src="../img/List_Act_3.jpg" alt="" /></a>
 				</ion-slide>
 			</ion-slide-box>
 		</div>
@@ -44,6 +44,6 @@
 				<div class="h_state">{{item.info}}</div>
 			</ion-item>
 		</ion-list>
-		<ion-infinite-scroll distance="5%" ng-if="sayDataLoad" on-infinite="loadMore()"></ion-infinite-scroll>
+		<ion-infinite-scroll spinner="dots" distance="5%" ng-if="sayDataLoad" on-infinite="loadMore()"></ion-infinite-scroll>
 	</ion-content>
 </ion-view>
