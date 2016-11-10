@@ -8,7 +8,7 @@ starterCtrls
    	/*直播中*/
 		$scope.living = false;
 		/*关注探基公众号*/
-		$scope.followTJ = false;
+		$scope.followTJ = true;
 		/*直播结束*/
 		$scope.liveEnd = false;
 		$scope.liveFinish = false;
@@ -94,7 +94,7 @@ starterCtrls
 		$scope.closeLiving = function(){
 			$scope.living = false;
 			$scope.liveEnd = true; 
-			$scope.followTJ = false;
+			$scope.followTJ = true;
 			$scope.enterLive = false;
 			$scope.liveFinish = true;
 		}

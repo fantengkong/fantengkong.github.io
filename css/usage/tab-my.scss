@@ -6,9 +6,9 @@
         color: #a49f99;
     }
     .tabs-striped.tabs-color-assertive .tab-item.tab-item-active{
-        color: $color;
         font-size: 15px;
         font-weight: 600;
+        border-color: $color;
     }
     .k_nologin {
         .k_no {

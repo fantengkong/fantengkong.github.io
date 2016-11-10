@@ -11,7 +11,9 @@
 .tab_home {
     .bar{
         background-image: linear-gradient(0deg, #e8e7e5, #e8e7e5 50%, transparent 50%);
-    
+//      border: 1px solid #ddd;
+//      height: 45px!important;
+        
     }
     ion-content{
         &.has-subheader{
@@ -71,7 +73,7 @@
                 font-size: 12px;
                 line-height: 20px;
                 min-height: 22px;
-                margin: 9px 0 2px 1.6rem;
+                margin: 9px 0 0 1.6rem;
                 color: #55473e;
                 border: none; 
                 &:last-child{

@@ -1,6 +1,5 @@
 starterCtrls
 	.controller('HomeController', ['$state', '$scope', '$ionicScrollDelegate', '$http', '$timeout', function($state, $scope, $ionicScrollDelegate, $http, $timeout) {
-		
 		/*回到顶部*/
 		$scope.scrollTop = function() {
 			$ionicScrollDelegate.$getByHandle('h_content').scrollTop(true);
@@ -58,6 +57,7 @@ starterCtrls
 			);*/
 	}])
 	.controller('home_watchCtrl', ['$state', '$scope', '$ionicScrollDelegate', '$http', '$timeout', function($state, $scope, $ionicScrollDelegate, $http, $timeout) {
+		$scope.watchDataLoad = false;
 		
 		/*打开看大会分类页*/
 		$scope.openWatchClassify = function(){
@@ -96,7 +96,7 @@ starterCtrls
     	$http.get('./mock/home/home_list.json')
 			.then(
 				function(res) {					
-					$scope.items1=res.data;
+					$scope.items1=$scope.items11;
 				}
 			);
 			$ionicScrollDelegate.$getByHandle('h_content').scrollTop(true);
@@ -107,7 +107,6 @@ starterCtrls
     	$scope.activeNavWatch = index;
     	$scope.isActive1 = false;
     	$scope.num1 = 0;
-    	$scope.watchDataLoad = true;
     	//点击加载数据
     	$http.get('./mock/home/home_list.json')
 			.then(
@@ -126,16 +125,19 @@ starterCtrls
 		/*是否加载*/
 		$scope.watchDataLoad = true;
 		$scope.loadMore = function() {
-			$http.get('./mock/home_more-item.json').success(function(items) {
-				/*总加载次数*/
-				$scope.time = Math.ceil(items.length/10);
-				if($scope.num1 == $scope.time){
-					$scope.watchDataLoad = false;
-				}
-				$scope.items1 = $scope.items1.concat(items.slice( (0+$scope.num1*10) , (9+$scope.num1*10) ) );
-				$scope.num1++;
-				$scope.$broadcast('scroll.infiniteScrollComplete');
-			})
+			$timeout(function(){
+				$http.get('./mock/home_more-item.json').success(function(items) {
+					/*总加载次数*/
+					$scope.time = Math.ceil(items.length/10);
+					if($scope.num1 == $scope.time){
+						$scope.watchDataLoad = false;
+					}
+					$scope.items1 = $scope.items1.concat(items.slice( (0+$scope.num1*10) , (9+$scope.num1*10) ) );
+					$scope.num1++;
+					$scope.$broadcast('scroll.infiniteScrollComplete');
+				})
+			},2000)
+				
 		};
 		$scope.$on('scroll.inifiteScrollComplete', function() {
 			$scope.loadMore();

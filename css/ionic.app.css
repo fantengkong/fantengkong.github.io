@@ -9688,7 +9688,7 @@ html {
     font-size: 12px;
     line-height: 20px;
     min-height: 22px;
-    margin: 9px 0 2px 1.6rem;
+    margin: 9px 0 0 1.6rem;
     color: #55473e;
     border: none; }
     .tab_home .h_center .scroll .button:last-child {
@@ -9845,7 +9845,8 @@ html {
   padding: 0;
   height: 20.8rem; }
   .tab-activity ion-content .list .item .item-content {
-    padding: 0; }
+    padding: 0;
+    height: 20.8rem; }
   .tab-activity ion-content .list .item div {
     height: 100%;
     width: 100%;
@@ -9869,16 +9870,16 @@ html {
     .tab-activity ion-content .list .item div img {
       border-radius: 4px;
       width: 100%;
-      height: 100%; }
+      height: 20.8rem; }
 
 .tab-my p {
   margin: 0; }
 .tab-my .tabs-color-assertive .tab-item {
   color: #a49f99; }
 .tab-my .tabs-striped.tabs-color-assertive .tab-item.tab-item-active {
-  color: #ff6600;
   font-size: 15px;
-  font-weight: 600; }
+  font-weight: 600;
+  border-color: #ff6600; }
 .tab-my .k_nologin .k_no {
   width: 100%;
   font-weight: 600;
@@ -10530,90 +10531,44 @@ html {
 * i==info
 * w==weixin
 * */
-.liveprofile p {
-  margin: 0; }
-.liveprofile ion-content.has-footer {
-  bottom: 50px; }
-.liveprofile ion-content .follow_TJweixin {
-  height: 40px;
-  background: #ff6600;
-  font-size: #fff;
-  padding: 0 1.6rem; }
-  .liveprofile ion-content .follow_TJweixin .col {
-    padding: 0; }
-  .liveprofile ion-content .follow_TJweixin div, .liveprofile ion-content .follow_TJweixin button {
-    color: #fff; }
-  .liveprofile ion-content .follow_TJweixin .TJ_logo {
-    display: inline-block;
-    line-height: 40px;
-    color: #fff;
-    padding-right: .6rem;
-    font-size: 22px;
-    font-weight: 900; }
-  .liveprofile ion-content .follow_TJweixin .TJ_info {
-    display: inline-block;
-    line-height: 12px;
-    font-size: 12px; }
-    .liveprofile ion-content .follow_TJweixin .TJ_info p {
-      font-size: 12px;
-      line-height: 20px;
-      height: 20px; }
-  .liveprofile ion-content .follow_TJweixin button {
-    font-size: 12px;
-    white-space: nowrap;
-    background: none;
-    margin: .8rem 0;
-    border: 1px solid #fff;
-    border-radius: 4px;
-    height: 24px; }
-.liveprofile ion-content .liveprofile_img {
-  position: relative;
-  height: 21rem; }
-  .liveprofile ion-content .liveprofile_img .liveprofile_countdown {
+.liveprofile {
+  /*关注微信*/
+  /*返回按钮*/ }
+  .liveprofile p {
+    margin: 0; }
+  .liveprofile .follow_TJweixin {
     height: 40px;
-    text-align: center;
-    font-size: 14px;
-    line-height: 40px;
-    background: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    bottom: 0;
-    width: 100%; }
-    .liveprofile ion-content .liveprofile_img .liveprofile_countdown p {
+    background: #ff6600;
+    font-size: #fff;
+    padding: 0 1.6rem; }
+    .liveprofile .follow_TJweixin .col {
+      padding: 0; }
+    .liveprofile .follow_TJweixin div, .liveprofile .follow_TJweixin button {
       color: #fff; }
-  .liveprofile ion-content .liveprofile_img .liveprofile_living, .liveprofile ion-content .liveprofile_img .liveprofile_liveEnd {
-    height: 20px;
-    text-align: center;
-    font-size: 10px;
-    line-height: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    bottom: 1rem;
-    right: 1.6rem;
-    padding: 0 1.6rem;
-    border-radius: 10px; }
-    .liveprofile ion-content .liveprofile_img .liveprofile_living p, .liveprofile ion-content .liveprofile_img .liveprofile_liveEnd p {
-      color: #fff; }
-  .liveprofile ion-content .liveprofile_img .liveprofile_playBack {
-    position: absolute;
-    width: 15rem;
-    height: 8.8rem;
-    border-radius: 5px;
-    background: rgba(0, 0, 0, 0.5);
-    line-height: 5rem;
-    text-align: center;
-    color: #fff;
-    left: 0;
-    top: 0;
-    margin: auto;
-    right: 0;
-    bottom: 0; }
-    .liveprofile ion-content .liveprofile_img .liveprofile_playBack i {
-      font-size: 4rem; }
-    .liveprofile ion-content .liveprofile_img .liveprofile_playBack p {
-      font-size: 1.4rem;
-      line-height: 1.4rem;
-      margin: 0; }
-  .liveprofile ion-content .liveprofile_img .liveprofile_back {
+    .liveprofile .follow_TJweixin .TJ_logo {
+      display: inline-block;
+      line-height: 40px;
+      color: #fff;
+      padding-right: .6rem;
+      font-size: 22px;
+      font-weight: 900; }
+    .liveprofile .follow_TJweixin .TJ_info {
+      display: inline-block;
+      line-height: 12px;
+      font-size: 12px; }
+      .liveprofile .follow_TJweixin .TJ_info p {
+        font-size: 12px;
+        line-height: 20px;
+        height: 20px; }
+    .liveprofile .follow_TJweixin button {
+      font-size: 12px;
+      white-space: nowrap;
+      background: none;
+      margin: .8rem 0;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      height: 24px; }
+  .liveprofile .liveprofile_back {
     position: absolute;
     z-index: 1;
     width: 3.2rem;
@@ -10624,208 +10579,263 @@ html {
     text-align: center;
     color: #fff;
     left: 1.6rem;
-    top: 1rem; }
-  .liveprofile ion-content .liveprofile_img img {
-    width: 100%;
-    height: 100%; }
-.liveprofile ion-content .list {
-  padding: 1.6rem 0 0 0; }
-  .liveprofile ion-content .list .item {
-    border: none; }
-  .liveprofile ion-content .list .liveprofile_title {
-    padding: 0 1.6rem;
-    font-size: 18px;
-    line-height: 1.4;
-    color: #333;
-    padding-bottom: .5rem; }
-  .liveprofile ion-content .list .liveprofile_enrollment {
-    padding: 0 1.6rem;
-    height: 24px;
-    overflow: hidden;
-    position: relative; }
-    .liveprofile ion-content .list .liveprofile_enrollment span {
-      display: inline-block;
-      overflow: hidden;
-      width: 24px;
-      height: 24px;
-      border-radius: 5px; }
-    .liveprofile ion-content .list .liveprofile_enrollment .people_num {
+    top: 5rem; }
+  .liveprofile ion-content.has-footer {
+    bottom: 50px; }
+  .liveprofile ion-content.has-header {
+    top: 40px; }
+  .liveprofile ion-content .liveprofile_img {
+    position: relative;
+    height: 21rem; }
+    .liveprofile ion-content .liveprofile_img .liveprofile_countdown {
+      height: 40px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 40px;
+      background: rgba(0, 0, 0, 0.5);
       position: absolute;
-      top: 0;
-      height: 24px;
-      width: auto;
-      color: #fe6700;
-      padding: 0 8px;
-      line-height: 24px;
-      background: #f4f4f4;
-      margin: 0 4px; }
-  .liveprofile ion-content .list .liveprofile_keywords {
-    padding: 1.4rem 1.6rem; }
-    .liveprofile ion-content .list .liveprofile_keywords i {
-      display: inline-block;
+      bottom: 0;
+      width: 100%; }
+      .liveprofile ion-content .liveprofile_img .liveprofile_countdown p {
+        color: #fff; }
+    .liveprofile ion-content .liveprofile_img .liveprofile_living, .liveprofile ion-content .liveprofile_img .liveprofile_liveEnd {
+      height: 20px;
+      text-align: center;
+      font-size: 10px;
+      line-height: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      bottom: 1rem;
+      right: 1.6rem;
       padding: 0 1.6rem;
-      font-size: 1.2rem;
-      line-height: 2.2rem;
-      box-sizing: border-box;
-      border-radius: 4px;
-      color: #b4b3ae;
-      margin-right: .8rem;
-      background: #f4f4f4; }
-      .liveprofile ion-content .list .liveprofile_keywords i:first-of-type {
-        color: #b4b1ac;
-        background: none;
-        border: solid 1px #dbd7d0;
-        height: 2.2rem;
-        line-height: 2rem; }
-  .liveprofile ion-content .list .liveprofile_time_place {
-    border-top: 1px solid #eae6e3;
-    padding: 2rem 1.6rem .5rem;
-    color: #888;
-    line-height: 20px;
-    font-size: 13px; }
-  .liveprofile ion-content .list .live_people {
-    padding: 1rem 1.6rem;
-    border: 1px solid #eaeaea;
-    border-right: none;
-    border-left: none;
-    height: 7.6rem; }
-    .liveprofile ion-content .list .live_people .col {
-      padding: 0; }
-    .liveprofile ion-content .list .live_people .a_portrait img {
-      width: 5.6rem;
-      height: 5.6rem;
-      border-radius: 50%; }
-    .liveprofile ion-content .list .live_people .a_message p {
-      margin-top: .4rem;
-      margin-bottom: .5rem;
-      font-size: 1.2rem; }
-      .liveprofile ion-content .list .live_people .a_message p .a_name {
-        font-weight: 600;
-        font-size: 1.6rem;
-        padding-right: .8rem;
-        color: #2a2a2a; }
-      .liveprofile ion-content .list .live_people .a_message p .a_title {
-        color: #878787; }
-      .liveprofile ion-content .list .live_people .a_message p .a_place {
-        color: #878787;
-        padding-right: .8rem; }
-      .liveprofile ion-content .list .live_people .a_message p .a_office {
-        color: #878787; }
-    .liveprofile ion-content .list .live_people .a_go {
-      line-height: 5.6rem;
-      text-align: right;
-      font-size: 1.6rem;
-      color: #b9b2aa; }
-  .liveprofile ion-content .list .liveprofile_info {
-    padding: 0 1.6rem;
-    margin: 0; }
-    .liveprofile ion-content .list .liveprofile_info dt h2 {
-      margin: 0;
-      line-height: 32px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #333; }
-    .liveprofile ion-content .list .liveprofile_info dt p {
-      line-height: 24px;
-      font-size: 14px;
-      font-weight: 100; }
-    .liveprofile ion-content .list .liveprofile_info .i_list {
-      padding: 1rem 0 1.6rem; }
-      .liveprofile ion-content .list .liveprofile_info .i_list li {
-        list-style: none; }
-    .liveprofile ion-content .list .liveprofile_info .i_pic img {
+      border-radius: 10px; }
+      .liveprofile ion-content .liveprofile_img .liveprofile_living p, .liveprofile ion-content .liveprofile_img .liveprofile_liveEnd p {
+        color: #fff; }
+    .liveprofile ion-content .liveprofile_img .liveprofile_playBack {
+      position: absolute;
+      width: 15rem;
+      height: 8.8rem;
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.5);
+      line-height: 5rem;
+      text-align: center;
+      color: #fff;
+      left: 0;
+      top: 0;
+      margin: auto;
+      right: 0;
+      bottom: 0; }
+      .liveprofile ion-content .liveprofile_img .liveprofile_playBack i {
+        font-size: 4rem; }
+      .liveprofile ion-content .liveprofile_img .liveprofile_playBack p {
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        margin: 0; }
+    .liveprofile ion-content .liveprofile_img img {
       width: 100%;
-      height: 12.8rem; }
-    .liveprofile ion-content .list .liveprofile_info .i_text {
-      padding-top: 1.2rem; }
-      .liveprofile ion-content .list .liveprofile_info .i_text p {
-        font-size: 14px;
-        line-height: 1.57;
-        color: #2a2a2a; }
-.liveprofile .bar-footer {
-  height: 50px; }
-  .liveprofile .bar-footer.signUp {
-    background: #ff6600; }
-  .liveprofile .bar-footer.calm {
-    background: #838f9f; }
-  .liveprofile .bar-footer .title {
-    height: 50px;
-    line-height: 50px;
-    color: #fff; }
-.liveprofile .p_mask {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  opacity: 0.5;
-  z-index: 10; }
-.liveprofile .card {
-  z-index: 11;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 10.2rem;
-  margin: auto;
-  width: 31.6rem;
-  height: 40rem;
-  border-radius: 4px; }
-  .liveprofile .card span {
-    position: absolute;
-    display: block;
-    right: 1rem;
-    top: 1rem;
-    font-size: 1.8rem;
-    color: #fff;
-    width: 1.8rem;
-    height: 1.8rem;
-    text-align: center;
-    z-index: 10002; }
-  .liveprofile .card ion-scroll {
-    height: 22rem; }
-    .liveprofile .card ion-scroll .scroll-bar-indicator {
-      background: #eae6e3; }
-  .liveprofile .card .p_introduce {
-    padding-bottom: 0;
-    padding-top: 0;
-    border-width: 0; }
-    .liveprofile .card .p_introduce p {
-      padding-right: 1rem; }
-      .liveprofile .card .p_introduce p:first-child {
-        margin-top: 0; }
-  .liveprofile .card .p_background {
-    width: 100%;
-    height: 12rem;
-    overflow: visible;
-    background: url(../../img/background/speaker_bg.jpg);
-    background-size: 100% 100%;
-    margin-bottom: 4.4rem; }
-    .liveprofile .card .p_background .item {
-      background: none; }
-    .liveprofile .card .p_background .p_people {
-      height: 16.4rem;
-      overflow: visible;
-      z-index: 1000;
-      padding: 0;
-      border: none;
-      padding: 9rem 0 0.4rem 10.6rem; }
-      .liveprofile .card .p_background .p_people img {
-        z-index: 1000;
-        top: 7rem;
-        left: 1.6rem;
-        border: 2px solid #fff;
-        box-sizing: border-box;
+      height: 100%; }
+  .liveprofile ion-content .list {
+    padding: 1.6rem 0 0 0; }
+    .liveprofile ion-content .list .item {
+      border: none; }
+    .liveprofile ion-content .list .liveprofile_title {
+      padding: 0 1.6rem;
+      font-size: 18px;
+      line-height: 1.4;
+      color: #333;
+      padding-bottom: .5rem; }
+    .liveprofile ion-content .list .liveprofile_enrollment {
+      padding: 0 1.6rem;
+      height: 24px;
+      overflow: hidden;
+      position: relative; }
+      .liveprofile ion-content .list .liveprofile_enrollment img {
         border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
-      .liveprofile .card .p_background .p_people h2 {
+        width: 24px;
+        height: 24px; }
+      .liveprofile ion-content .list .liveprofile_enrollment span {
+        display: inline-block;
+        overflow: hidden;
+        width: 24px;
+        height: 24px;
+        border-radius: 5px; }
+      .liveprofile ion-content .list .liveprofile_enrollment .people_num {
+        position: absolute;
+        top: 0;
+        height: 24px;
+        width: auto;
+        color: #fe6700;
+        padding: 0 8px;
+        line-height: 24px;
+        background: #f4f4f4;
+        margin: 0 4px; }
+    .liveprofile ion-content .list .liveprofile_keywords {
+      padding: 1.4rem 1.6rem; }
+      .liveprofile ion-content .list .liveprofile_keywords i {
+        display: inline-block;
+        padding: 0 1.6rem;
+        font-size: 1.2rem;
         line-height: 2.2rem;
-        color: #fff;
-        font-size: 1.6rem;
-        margin-bottom: 1.6rem; }
-      .liveprofile .card .p_background .p_people p {
-        color: #8D939D;
-        line-height: 1.8rem;
+        box-sizing: border-box;
+        border-radius: 4px;
+        color: #b4b3ae;
+        margin-right: .8rem;
+        background: #f4f4f4; }
+        .liveprofile ion-content .list .liveprofile_keywords i:first-of-type {
+          color: #b4b1ac;
+          background: none;
+          border: solid 1px #dbd7d0;
+          height: 2.2rem;
+          line-height: 2rem; }
+    .liveprofile ion-content .list .liveprofile_time_place {
+      border-top: 1px solid #eae6e3;
+      padding: 2rem 1.6rem .5rem;
+      color: #888;
+      line-height: 20px;
+      font-size: 13px; }
+    .liveprofile ion-content .list .live_people {
+      padding: 1rem 1.6rem;
+      border: 1px solid #eaeaea;
+      border-right: none;
+      border-left: none;
+      height: 7.6rem; }
+      .liveprofile ion-content .list .live_people .col {
+        padding: 0; }
+      .liveprofile ion-content .list .live_people .a_portrait img {
+        width: 5.6rem;
+        height: 5.6rem;
+        border-radius: 50%; }
+      .liveprofile ion-content .list .live_people .a_message p {
+        margin-top: .4rem;
+        margin-bottom: .5rem;
         font-size: 1.2rem; }
+        .liveprofile ion-content .list .live_people .a_message p .a_name {
+          font-weight: 600;
+          font-size: 1.6rem;
+          padding-right: .8rem;
+          color: #2a2a2a; }
+        .liveprofile ion-content .list .live_people .a_message p .a_title {
+          color: #878787; }
+        .liveprofile ion-content .list .live_people .a_message p .a_place {
+          color: #878787;
+          padding-right: .8rem; }
+        .liveprofile ion-content .list .live_people .a_message p .a_office {
+          color: #878787; }
+      .liveprofile ion-content .list .live_people .a_go {
+        line-height: 5.6rem;
+        text-align: right;
+        font-size: 1.6rem;
+        color: #b9b2aa; }
+    .liveprofile ion-content .list .liveprofile_info {
+      padding: 0 1.6rem;
+      margin: 0; }
+      .liveprofile ion-content .list .liveprofile_info dt h2 {
+        margin: 0;
+        line-height: 32px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #333; }
+      .liveprofile ion-content .list .liveprofile_info dt p {
+        line-height: 24px;
+        font-size: 14px;
+        font-weight: 100; }
+      .liveprofile ion-content .list .liveprofile_info .i_list {
+        padding: 1rem 0 1.6rem; }
+        .liveprofile ion-content .list .liveprofile_info .i_list li {
+          list-style: none; }
+      .liveprofile ion-content .list .liveprofile_info .i_pic img {
+        width: 100%;
+        height: 12.8rem; }
+      .liveprofile ion-content .list .liveprofile_info .i_text {
+        padding-top: 1.2rem; }
+        .liveprofile ion-content .list .liveprofile_info .i_text p {
+          font-size: 14px;
+          line-height: 1.57;
+          color: #2a2a2a; }
+  .liveprofile .bar-footer {
+    height: 50px; }
+    .liveprofile .bar-footer.signUp {
+      background: #ff6600; }
+    .liveprofile .bar-footer.calm {
+      background: #838f9f; }
+    .liveprofile .bar-footer .title {
+      height: 50px;
+      line-height: 50px;
+      color: #fff; }
+  .liveprofile .p_mask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    z-index: 10; }
+  .liveprofile .card {
+    z-index: 11;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10.2rem;
+    margin: auto;
+    width: 85%;
+    height: 40rem;
+    border-radius: 4px; }
+    .liveprofile .card span {
+      position: absolute;
+      display: block;
+      right: 1rem;
+      top: 1rem;
+      font-size: 1.8rem;
+      color: #fff;
+      width: 1.8rem;
+      height: 1.8rem;
+      text-align: center;
+      z-index: 10002; }
+    .liveprofile .card ion-scroll {
+      height: 22rem; }
+      .liveprofile .card ion-scroll .scroll-bar-indicator {
+        background: #eae6e3; }
+    .liveprofile .card .p_introduce {
+      padding-bottom: 0;
+      padding-top: 0;
+      border-width: 0; }
+      .liveprofile .card .p_introduce p {
+        padding-right: 1rem; }
+        .liveprofile .card .p_introduce p:first-child {
+          margin-top: 0; }
+    .liveprofile .card .p_background {
+      width: 100%;
+      height: 12rem;
+      overflow: visible;
+      background: url(../../img/background/speaker_bg.jpg);
+      background-size: 100% 100%;
+      margin-bottom: 4.4rem; }
+      .liveprofile .card .p_background .item {
+        background: none; }
+      .liveprofile .card .p_background .p_people {
+        height: 16.4rem;
+        overflow: visible;
+        z-index: 1000;
+        padding: 0;
+        border: none;
+        padding: 9rem 0 0.4rem 10.6rem; }
+        .liveprofile .card .p_background .p_people img {
+          z-index: 1000;
+          top: 7rem;
+          left: 1.6rem;
+          border: 2px solid #fff;
+          box-sizing: border-box;
+          border-radius: 5px;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
+        .liveprofile .card .p_background .p_people h2 {
+          line-height: 2.2rem;
+          color: #fff;
+          font-size: 1.6rem;
+          margin-bottom: 1.6rem; }
+        .liveprofile .card .p_background .p_people p {
+          color: #8D939D;
+          line-height: 1.8rem;
+          font-size: 1.2rem; }
 
 .popup-container .popup {
   background: rgba(0, 0, 0, 0.6);
