@@ -39,7 +39,7 @@ l==live
 		</div>
 	</div>
 		
-	<ion-content class="has-footer padding"  ng-class="{true: 'has_weixin'}[TJweixinShow]">
+	<ion-content class="has-footer padding" delegate-handle="liveScroll"  ng-class="{true: 'has_weixin'}[TJweixinShow]">
 		<!--聊天记录-->
 		<ul class="l_chat">
 			<li class="msgContent l_speaker" ng-if="isExpert" style="clear: both;"><img src="../img/perry.png"/><p><b class="l_left"></b>我是讲师，有专业气泡</p></li>
@@ -64,11 +64,14 @@ l==live
 		</button>-->
 		<!--输入框-->
 	  <label class="item-input-wrapper">
-	    <input ng-model="Chat" type="text" placeholder="一起讨论">
+	    <input ng-model="viewer.Chat" type="text" placeholder="一起讨论">
 	  </label>
-	  <!--发送按钮-->
+	  <!--分享按钮-->
 	  <!--<button class="button button-clear" ng-click="sendChat()">
 	    <i class="icon iconfont">&#xe64f;</i>
 	  </button>-->
+	  	
+	  <!--发送按钮-->
+	  <span ng-click="sendChat()" ng-if="keyboard_show">发送</span>
 	</div>
 </ion-view>

@@ -1,5 +1,32 @@
 starterCtrls
   .controller('LiveController',['$ionicViewSwitcher', '$scope', '$http', '$ionicScrollDelegate', '$ionicHistory', '$state', '$stateParams', '$timeout',function ($ionicViewSwitcher, $scope, $http, $ionicScrollDelegate, $ionicHistory, $state, $stateParams, $timeout) {
+    
+//  ionic.Platform.isFullScreen = true;
+//
+//		if (ionic.Platform.isIOS()) {
+//		cordova.plugins.Keyboard.disableScroll(true);
+//		}
+		console.log($('body').scrollTop(10));
+		
+		console.log($(window).height());
+		
+		
+    $scope.keyboard_show = false;
+    $scope.viewer ={};
+    /*发送聊天*/
+    $scope.sendChat = function(){
+  		var oDiv=document.createElement('div');
+			oDiv.style='clear:both';
+			var $Ul=$(".l_chat");
+			var $Li=$("ul li.msgContent:last").clone();
+			$Li.html("<p><b class='l_right'></b>"+$scope.viewer.Chat+"</p><img src='../img/ben.png'/>");
+			if($scope.viewer.Chat.length){
+				$Li.appendTo($Ul);
+				$ionicScrollDelegate.$getByHandle('liveScroll').scrollBottom();
+				$scope.viewer.Chat="";
+			}
+    }
+    
     function GetQueryString(name){
 			var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
 			var r = window.location.search.substr(1).match(reg);
@@ -24,28 +51,13 @@ starterCtrls
 				}
 			}
 		);
-		
 		/*返回*/
     $scope.liveBack = function(){
     	$state.go($scope.params.view2,{detailId: $scope.params.liveId, liveId: $scope.params.liveId, liveprofileId: $scope.params.liveId, view: $scope.params.view,nav: $scope.params.nav, position:$scope.params.position});
     	$ionicViewSwitcher.nextDirection("back");
     }
-		
-    /*发送聊天*/
-    $scope.sendChat = function(){
-  		var oDiv=document.createElement('div');
-			oDiv.style='clear:both';
-			var $Ul=$(".l_chat");
-			console.log($Ul);
-			var $Li=$("ul li.msgContent:last").clone();
-			
-			$Li.html("<p><b class='l_right'></b>"+$scope.Chat+"</p><img src='../img/ben.png'/>");
-			if($scope.Chat.length>0){
-				$Li.appendTo($Ul);
-				$ionicScrollDelegate.$getByHandle('liveScroll').scrollBottom();
-				$scope.Chat="";
-			}
-    }
+
+    
     /*点赞*/
     $scope.isActived = false;
     $scope.zan = 1234; 
@@ -80,4 +92,7 @@ starterCtrls
    $scope.goToTJweixin = function(){
    	$state.go("login_register",{view:'live'});
    }
+		window.addEventListener('native.keyboardshow', function(){
+			$scope.keyboard_show = true;
+		});
   }]);

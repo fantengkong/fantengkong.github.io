@@ -196,7 +196,10 @@ starterCtrls
 			},0)
 		}
 		$scope.getPos = function() {
-			$scope.d_top = parseInt($ionicScrollDelegate.$getByHandle('h_content').getScrollPosition().top);
+			$timeout(function(){
+        $scope.d_top = parseInt($ionicScrollDelegate.$getByHandle('h_content').getScrollPosition().top);
+      }, 1000);  
+			
 			if($scope.d_top > 10) {
 				$(".scrollToTop").show();
 			} else {
@@ -312,7 +315,9 @@ starterCtrls
 		}
 		/*跳转位置*/
 		$scope.getPos = function() {
-			$scope.d_top = parseInt($ionicScrollDelegate.$getByHandle('h_content').getScrollPosition().top);
+			$timeout(function(){
+        $scope.d_top = parseInt($ionicScrollDelegate.$getByHandle('h_content').getScrollPosition().top);
+      }, 1000);
 			if($scope.d_top > 10) {
 				$(".scrollToTop").show();
 			} else {

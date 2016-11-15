@@ -35,6 +35,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngAnimate'])
   $ionicConfigProvider.platform.android.tabs.position('bottom');//位置
   $ionicConfigProvider.platform.android.navBar.alignTitle('center');//标题的显示
   $ionicConfigProvider.platform.android.views.transition('ios');//过度的动画 三种风格
+  $ionicConfigProvider.scrolling.jsScrolling(false);
   
   $stateProvider
   	//配置tabs路由
@@ -273,7 +274,6 @@ angular.module('starter', ['ionic', 'starter.controllers','ngAnimate'])
   		controller: 'LiveProfileController'
   	});
     $urlRouterProvider.otherwise('/tab/home');
-//  $ionicConfigProvider.tabs.position('bottom');
     
 })
 .directive('scrollHeight',function($window){
@@ -299,4 +299,22 @@ angular.module('starter', ['ionic', 'starter.controllers','ngAnimate'])
       element[0].style.height=($window.innerHeight-50-210-44)+'px';
     }
   }
+})
+.directive('myfocus', function($timeout, $parse) {
+　　return {
+　　　　link: function(scope, element, attrs) {
+　　　　var model = $parse(attrs.myfocus);
+　　　　scope.$watch(model, function(value) {
+　　　　　　if(value === true) {
+　　　　　　　　$timeout(function() {
+　　　　　　　　　　element[0].focus();
+　　　　　　　　});
+　　　　　　}else if(value === false){
+　　　　　　　　$timeout(function() {
+　　　　　　　　　　element[0].blur();
+　　　　　　　　});
+　　　　　　}
+　　　　});
+　　　}
+　　};
 });

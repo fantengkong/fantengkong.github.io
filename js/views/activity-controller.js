@@ -1,6 +1,6 @@
 starterCtrls
   .controller('ActivityController', ['$ionicViewSwitcher', '$scope', '$http', '$state', function ($ionicViewSwitcher, $scope, $http, $state) {
-
+		
   }])
   .controller('lastestActCtrl', ['$ionicViewSwitcher', '$scope', '$http', '$state', function ($ionicViewSwitcher, $scope, $http, $state) {
  		/*活动页数据*/

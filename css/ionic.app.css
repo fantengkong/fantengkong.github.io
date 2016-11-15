@@ -9867,38 +9867,40 @@ html {
   .tab-activity .tab-item.tab-item-active {
     color: #ff6600;
     font-weight: bold; }
-.tab-activity ion-content .list .item {
-  border: none;
-  margin: 1.6rem 1.6rem 0;
-  padding: 0;
-  height: 20.8rem; }
-  .tab-activity ion-content .list .item .item-content {
+.tab-activity ion-content .list {
+  padding-bottom: 1.6rem; }
+  .tab-activity ion-content .list .item {
+    border: none;
+    margin: 1.6rem 1.6rem 0;
     padding: 0;
     height: 20.8rem; }
-  .tab-activity ion-content .list .item div {
-    height: 100%;
-    width: 100%;
-    position: relative; }
-    .tab-activity ion-content .list .item div p {
-      background: #838e9f;
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      color: #fff;
-      text-align: center;
-      padding: 2px 10px;
-      border-radius: 4px 0 4px 0; }
-    .tab-activity ion-content .list .item div .foreshow {
-      background-color: #4384e9; }
-    .tab-activity ion-content .list .item div .startTime {
-      background-color: #4384e9; }
-      .tab-activity ion-content .list .item div .startTime .k-time {
-        padding: 0 5px; }
-    .tab-activity ion-content .list .item div img {
-      border-radius: 4px;
-      width: 100%;
+    .tab-activity ion-content .list .item .item-content {
+      padding: 0;
       height: 20.8rem; }
+    .tab-activity ion-content .list .item div {
+      height: 100%;
+      width: 100%;
+      position: relative; }
+      .tab-activity ion-content .list .item div p {
+        background: #838e9f;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        color: #fff;
+        text-align: center;
+        padding: 2px 10px;
+        border-radius: 4px 0 4px 0; }
+      .tab-activity ion-content .list .item div .foreshow {
+        background-color: #4384e9; }
+      .tab-activity ion-content .list .item div .startTime {
+        background-color: #4384e9; }
+        .tab-activity ion-content .list .item div .startTime .k-time {
+          padding: 0 5px; }
+      .tab-activity ion-content .list .item div img {
+        border-radius: 4px;
+        width: 100%;
+        height: 20.8rem; }
 
 .tab-my p {
   margin: 0; }
@@ -10271,7 +10273,7 @@ html {
           height: 2.2rem;
           color: #b4b1ac;
           background: none;
-          border: solid 1px #b4b1ac; }
+          border: solid 1px #dbd7d0; }
     .k_play .p_content .p_info .playMessage p {
       line-height: 20px;
       font-size: 14px;
@@ -11124,6 +11126,10 @@ html {
         color: #b4b1ac; }
   .live .l_footer.bar-footer .item-input-wrapper {
     height: 34px;
-    border-radius: 17px; }
+    border-radius: 17px;
+    margin-top: 0; }
+  .live .l_footer.bar-footer span {
+    padding: 0 1.6rem;
+    color: #8b8b8b; }
 
 /*# sourceMappingURL=ionic.app.css.map */
