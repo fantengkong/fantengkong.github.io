@@ -6,6 +6,7 @@ starterCtrls
 			$(".scrollToTop").hide();
 		};
 		/*回到顶部按钮显示消失*/
+		$scope.d_top=0;
 		$scope.getPos = function() {
 			$scope.d_top = parseInt($ionicScrollDelegate.$getByHandle('h_content').getScrollPosition().top);
 			if($scope.d_top > 10) {
@@ -40,8 +41,8 @@ starterCtrls
 		$scope.items22=	$scope.items2;
 		$scope.items33=	$scope.items3;	
 	}])
-	.controller('home_learnCtrl', ['$state', '$scope', '$ionicScrollDelegate', '$http', '$timeout', function($state, $scope, $ionicScrollDelegate, $http, $timeout) {
-		
+	.controller('home_learnCtrl', ['$ionicViewSwitcher' ,'$state', '$scope', '$ionicScrollDelegate', '$http', '$timeout', '$stateParams', function($ionicViewSwitcher, $state, $scope, $ionicScrollDelegate, $http, $timeout, $stateParams) {
+		console.log($stateParams);
 		$scope.openLearnClassify = function(){
 			$state.go("classify.learn",{},{reload:true});
 		}
@@ -64,30 +65,44 @@ starterCtrls
 		}
 		/*初始默认推荐按钮*/
 		$scope.activeNavLearn = -1;
-		$scope.isActive2 = true;
-		/*点击看大会推荐*/
+		/*判断是否有保存的锚点:二级导航*/
+		if($stateParams.nav || $stateParams.nav==0 ){
+			$scope.activeNavLearn = $stateParams.nav;
+		}
+		if($scope.activeNavLearn == -1){
+			$scope.isActive2 = true;
+		}
+		/*判断是否有保存的锚点:跳转位置*/
+		if($stateParams.position||$stateParams.position == 0){
+			$timeout(function(){
+				$ionicScrollDelegate.$getByHandle('h_content').scrollTo(0, $stateParams.position,[true])
+			},0)
+		}
+		/*学知识跳转到直播简介页*/
+		$scope.learn_to_liveprofile = function(index){
+			$state.go('liveprofile',{liveprofileId:index,view:'tabs.home.learn',nav:$scope.activeNavLearn,position:$scope.d_top});
+    	$ionicViewSwitcher.nextDirection("forward");
+			
+		}
+
+		/*点击学知识推荐*/
 		$scope.learnRecommend = function(){
 			$ionicScrollDelegate.$getByHandle('h_content').scrollTop(true);
-			$scope.activeNavLearn = -1;
-			$scope.isActive2 = true;
-			$scope.num2 = 0;
-    	$scope.learnDataLoad = true;
 			//点击加载数据
     	$http.get('./mock/home/home_list.json')
 			.then(
 				function(res) {					
 					$scope.items2=$scope.items22;
+					$scope.activeNavLearn = -1;
+					$scope.isActive2 = true;
+					$scope.num2 = 0;
+		    	$scope.learnDataLoad = true;
 				}
 			);
 		}
 		//点击二级导航按钮加载数据
 		$scope.navLearn = function(index){
 			$ionicScrollDelegate.$getByHandle('h_content').scrollTop(true);
-    	$scope.activeNavLearn = index;
-    	$scope.isActive2 = false;
-    	$scope.num2 = 0;
-    	$scope.learnDataLoad = true;
-    	
     	//点击加载数据
     	$http.get('./mock/home/home_list.json')
 			.then(
@@ -95,6 +110,11 @@ starterCtrls
 					$scope.item2=$scope.items22[(index%10)].id;
 					$scope.items2=[];
 					$scope.items2.push(res.data[$scope.item2]);
+					
+					$scope.activeNavLearn = index;
+		    	$scope.isActive2 = false;
+		    	$scope.num2 = 0;
+		    	$scope.learnDataLoad = true;
 				}
 			);
 		}
@@ -112,9 +132,10 @@ starterCtrls
 					/*总加载次数*/
 					$scope.time = Math.ceil(items.length/10);
 					if($scope.num2 == $scope.time){
-							$("ion-infinite-scroll").html("没有更多加载了");
-							$scope.loadMore = false;
-						}
+							$scope.learnDataLoad = false;
+					}else{
+						$scope.learnDataLoad = true;
+					}
 					$scope.items2 = $scope.items2.concat(items.slice( (0+$scope.num2*20) , (9+$scope.num2*20) ) );
 					$scope.num2++;
 					$scope.$broadcast('scroll.infiniteScrollComplete');
@@ -127,8 +148,10 @@ starterCtrls
 			$scope.loadMore();
 		});
 		
+		
+		
 	}])
-	.controller('home_watchCtrl', ['$state', '$scope', '$ionicScrollDelegate', '$http', '$timeout', function($state, $scope, $ionicScrollDelegate, $http, $timeout) {
+	.controller('home_watchCtrl', ['$ionicViewSwitcher' ,'$state', '$scope', '$ionicScrollDelegate', '$http', '$timeout', '$stateParams', function($ionicViewSwitcher, $state, $scope, $ionicScrollDelegate, $http, $timeout,$stateParams) {
 		$scope.watchDataLoad = false;
 		
 		/*打开看大会分类页*/
@@ -154,9 +177,38 @@ starterCtrls
 			}
 		}
 		
+		
 		/*初始默认推荐按钮*/
 		$scope.activeNavWatch = -1;
-		$scope.isActive1 = true;
+		/*判断是否有保存的锚点:二级导航*/
+		if($stateParams.nav || $stateParams.nav==0 ){
+			$scope.activeNavWatch = $stateParams.nav;
+		}
+		if($scope.activeNavWatch == -1){
+			$scope.isActive1 = true;
+		}
+		/*跳转位置*/
+		
+		/*判断是否有保存的锚点:跳转位置*/
+		if($stateParams.position||$stateParams.position == 0){
+			$timeout(function(){
+				$ionicScrollDelegate.$getByHandle('h_content').scrollTo(0, $stateParams.position,[true])
+			},0)
+		}
+		$scope.getPos = function() {
+			$scope.d_top = parseInt($ionicScrollDelegate.$getByHandle('h_content').getScrollPosition().top);
+			if($scope.d_top > 10) {
+				$(".scrollToTop").show();
+			} else {
+				$(".scrollToTop").hide();
+			}
+		}
+		
+		$scope.watch_to_liveprofile = function(index){
+			$state.go('liveprofile',{liveprofileId:index,view:'tabs.home.watch',nav:$scope.activeNavWatch,position:$scope.d_top});
+    	$ionicViewSwitcher.nextDirection("forward");
+			
+		}
 		
 		/*点击看大会推荐*/
 		$scope.watchRecommend = function(){
@@ -205,8 +257,9 @@ starterCtrls
 					/*总加载次数*/
 					$scope.time = Math.ceil(items.length/10);
 					if($scope.num1 == $scope.time){
-						$("ion-infinite-scroll").html("没有更多加载了");
-						$scope.loadMore = false;
+							$scope.watchDataLoad = false;
+					}else{
+						$scope.watchDataLoad = true;
 					}
 					$scope.items1 = $scope.items1.concat(items.slice( (0+$scope.num1*10) , (9+$scope.num1*10) ) );
 					$scope.num1++;
@@ -219,7 +272,7 @@ starterCtrls
 			$scope.loadMore();
 		});
 	}])
-	.controller('home_sayCtrl', ['$state', '$scope', '$ionicScrollDelegate', '$http', '$timeout', function($state, $scope, $ionicScrollDelegate, $http, $timeout) {
+	.controller('home_sayCtrl', ['$ionicViewSwitcher' ,'$state', '$scope', '$ionicScrollDelegate', '$http', '$timeout','$stateParams' , function($ionicViewSwitcher, $state, $scope, $ionicScrollDelegate, $http, $timeout, $stateParams) {
 		
 		$scope.openSayClassify = function(){
 			$state.go("classify.say",{},{reload:true});
@@ -242,8 +295,36 @@ starterCtrls
 			}
 		}
 		/*初始默认推荐按钮*/
+		/*初始默认推荐按钮*/
 		$scope.activeNavSay = -1;
-		$scope.isActive3 = true;
+		/*判断是否有保存的锚点:二级导航*/
+		if($stateParams.nav || $stateParams.nav==0 ){
+			$scope.activeNavSay = $stateParams.nav;
+		}
+		if($scope.activeNavSay == -1){
+			$scope.isActive3 = true;
+		}
+		/*判断是否有保存的锚点:跳转位置*/
+		if($stateParams.position||$stateParams.position == 0){
+			$timeout(function(){
+				$ionicScrollDelegate.$getByHandle('h_content').scrollTo(0, $stateParams.position,[true]);
+			},0)
+		}
+		/*跳转位置*/
+		$scope.getPos = function() {
+			$scope.d_top = parseInt($ionicScrollDelegate.$getByHandle('h_content').getScrollPosition().top);
+			if($scope.d_top > 10) {
+				$(".scrollToTop").show();
+			} else {
+				$(".scrollToTop").hide();
+			}
+		}
+		/*大咖说跳转到直播简介页*/
+		$scope.say_to_liveprofile = function(index){
+			$state.go('liveprofile',{liveprofileId:index,view:'tabs.home.say',nav:$scope.activeNavSay,position:$scope.d_top});
+    	$ionicViewSwitcher.nextDirection("forward");
+			
+		}
 		
 		/*点击看大会推荐*/
 		$scope.sayRecommend = function(){
@@ -291,8 +372,9 @@ starterCtrls
 					/*总加载次数*/
 					$scope.time = Math.ceil(items.length/10);
 					if($scope.num3 == $scope.time){
-						$("ion-infinite-scroll").html("没有更多加载了");
-						$scope.loadMore = false;
+							$scope.sayDataLoad = false;
+					}else{
+						$scope.sayDataLoad = true;
 					}
 					$scope.items3 = $scope.items3.concat(items.slice( (0+$scope.num3*10) , (9+$scope.num3*10) ) );
 					$scope.num3++;

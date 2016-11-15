@@ -17,7 +17,7 @@ l==live
 	<!--直播视频-->
 	<div class="l_play">
 		<!--返回按钮-->
-		<div ng-click="liveBack()" class="live_back" nav-direction="back">
+		<div ng-click="liveBack()" class="live_back">
 			<i class="icon iconfont">&#xe650;</i>
 		</div>
 		<!--放大按钮-->
@@ -39,7 +39,7 @@ l==live
 		</div>
 	</div>
 		
-	<ion-content class="has-footer padding" delegate-handle="liveScroll">
+	<ion-content class="has-footer padding"  ng-class="{true: 'has_weixin'}[TJweixinShow]">
 		<!--聊天记录-->
 		<ul class="l_chat">
 			<li class="msgContent l_speaker" ng-if="isExpert" style="clear: both;"><img src="../img/perry.png"/><p><b class="l_left"></b>我是讲师，有专业气泡</p></li>
@@ -59,16 +59,16 @@ l==live
 	<!--评论间开启-->
 	<div class="l_footer bar bar-footer item-input-inset" ng-if="commentsOpen">
 		<!--点赞按钮-->
-		<button class="button button-clear" ng-click="liveGood()" ng-class="{true: 'actived', false: ''}[isActived]">
+		<!--<button class="button button-clear" ng-click="liveGood()" ng-class="{true: 'actived', false: ''}[isActived]">
 			<i class="icon iconfont">&#xe64d;</i>
-		</button>
+		</button>-->
 		<!--输入框-->
 	  <label class="item-input-wrapper">
 	    <input ng-model="Chat" type="text" placeholder="一起讨论">
 	  </label>
 	  <!--发送按钮-->
-	  <button class="button button-clear" ng-click="sendChat()">
+	  <!--<button class="button button-clear" ng-click="sendChat()">
 	    <i class="icon iconfont">&#xe64f;</i>
-	  </button>
+	  </button>-->
 	</div>
 </ion-view>

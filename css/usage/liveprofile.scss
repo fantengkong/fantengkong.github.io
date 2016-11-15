@@ -66,7 +66,10 @@
         text-align: center;
         color: #fff;
         left: 1.6rem;
-        top: 5rem;
+        top: 1rem;
+        &.back_top{
+            top:5rem;
+        }
     }
     ion-content {
         &.has-footer {
@@ -138,7 +141,7 @@
             }
         }
         .list {
-            padding: 1.6rem 0 0 0;
+            padding: 1.6rem 0 1.6rem 0;
             .item {
                 border: none;
             }

@@ -1,13 +1,17 @@
 starterCtrls
-  .controller('LiveController',['$scope', '$http', '$ionicScrollDelegate', '$ionicHistory', '$state', '$stateParams', '$timeout',function ($scope, $http, $ionicScrollDelegate, $ionicHistory, $state, $stateParams, $timeout) {
-    
-    console.log($stateParams)
-    $scope.TJweixinShow = true;
-    if($scope.TJweixinShow == true){
-    	$(".has-footer").css({"top":"25rem"});
-    }else{
-    	$(".has-footer").css({"top":"21rem"});
-    }
+  .controller('LiveController',['$ionicViewSwitcher', '$scope', '$http', '$ionicScrollDelegate', '$ionicHistory', '$state', '$stateParams', '$timeout',function ($ionicViewSwitcher, $scope, $http, $ionicScrollDelegate, $ionicHistory, $state, $stateParams, $timeout) {
+    function GetQueryString(name){
+			var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if(r!=null)return  unescape(r[2]); return null;
+		}
+    /*判断是否显示关注注公众号*/
+   
+   	if(GetQueryString("from")){
+   		$scope.TJweixinShow = true;
+   	}else{
+   		$scope.TJweixinShow = false;
+   	}
     $scope.params = $stateParams;
     /*获取直播间数据*/
 		$http.get('mock/home/home_list.json')
@@ -23,8 +27,9 @@ starterCtrls
 		
 		/*返回*/
     $scope.liveBack = function(){
-    	$state.go($scope.params.view2,{detailId: $scope.params.liveId, liveId: $scope.params.liveId, liveprofileId: $scope.params.liveId, view: $scope.params.view});
-    } 
+    	$state.go($scope.params.view2,{detailId: $scope.params.liveId, liveId: $scope.params.liveId, liveprofileId: $scope.params.liveId, view: $scope.params.view,nav: $scope.params.nav, position:$scope.params.position});
+    	$ionicViewSwitcher.nextDirection("back");
+    }
 		
     /*发送聊天*/
     $scope.sendChat = function(){
@@ -68,11 +73,11 @@ starterCtrls
     	$scope.commentsOpen = false;
 	    $scope.commentsClose = true;
     	$scope.liveOver = true;
-    },3000);
+    },100000);
     /*判断专家或活动*/
    $scope.isExpert = true;
    /*进入探基微信公众号*/
    $scope.goToTJweixin = function(){
-   	$state.go("login_register");
+   	$state.go("login_register",{view:'live'});
    }
   }]);

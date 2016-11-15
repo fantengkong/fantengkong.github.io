@@ -1,5 +1,5 @@
 starterCtrls
-  .controller('DetailController',['$scope','$state','$stateParams','$http', '$ionicHistory',function ($scope, $state, $stateParams, $http, $ionicHistory) {
+  .controller('DetailController',['$ionicViewSwitcher', '$scope','$state','$stateParams','$http', '$ionicHistory',function ($ionicViewSwitcher ,$scope, $state, $stateParams, $http, $ionicHistory) {
     /*底部栏状态*/
     $scope.attend = false;
     $scope.close = false;
@@ -10,8 +10,13 @@ starterCtrls
     $scope.dBack=function(){
     	if($stateParams.view){
     		$state.go($stateParams.view);
+    		$ionicViewSwitcher.nextDirection("back");
+    		
     	}else{
+    		
     		$state.go("tabs.home");
+    		$ionicViewSwitcher.nextDirection("back");
+    		
     	}
     } 
     

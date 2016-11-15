@@ -1,15 +1,22 @@
 starterCtrls
-  .controller('PlayController', ['$scope', '$state', '$stateParams', '$http', function ($scope, $state, $stateParams,$http) {
+  .controller('PlayController', ['$ionicViewSwitcher', '$scope', '$state', '$stateParams', '$http', function ($ionicViewSwitcher, $scope, $state, $stateParams,$http) {
 //		console.log($stateParams);
 		$scope.pBack=function(){
 			if($stateParams.myId || $stateParams.myId==0 || $stateParams.homeId || $stateParams.homeId == 0){
 				$state.go($stateParams.view);
+    		$ionicViewSwitcher.nextDirection("back");
+				
 			}else	if($stateParams.playId || $stateParams.playId == 0){
 				$state.go($stateParams.view2, {detailId:$stateParams.playId,view: $stateParams.view});
+    		$ionicViewSwitcher.nextDirection("back");
+				
 			}else if($stateParams.detailId>=0){
 				$state.go("detail", {detailId:$stateParams.detailId});
+    		$ionicViewSwitcher.nextDirection("back");
+				
 			}else{
 				$state.go("tabs.home.watch");
+    		$ionicViewSwitcher.nextDirection("back");
 			}
 		}
 		$scope.display = false;

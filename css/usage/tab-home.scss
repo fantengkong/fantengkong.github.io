@@ -65,6 +65,10 @@
         &.has-header{
             top: 40px;
         }
+        .scroll-view.scroll-x {
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
         .scroll{
             white-space: nowrap;
             .button{

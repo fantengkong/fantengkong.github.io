@@ -16,21 +16,19 @@ d==detail
 	  <div class="col col-30"><button ng-click="goToTJweixin()">关注公众号</button></div>
 	</div>
 	<!--返回按钮-->
-	<div ng-click="dBack()" class="liveprofile_back" nav-direction="back">
+	<div ng-click="liveprofile_back()" class="liveprofile_back" ng-class="{true: 'back_top'}[followTJ]">
 		<i class="icon iconfont">&#xe64e;</i>
 	</div>
-	<ion-content class="has-footer has-header">
-	
+	<ion-content class="has-footer" ng-class="{true: 'has-header'}[followTJ]">
 		<!--视频窗口-->
 		<div class="liveprofile_img">
-			
 			<!--直播预告-->
 			<div class="liveprofile_countdown" ng-if="livePreview">
 				<p>距离开播还有: 3天 06小时 23分  18秒</p>
 			</div>
 			<!--正在直播-->
 			<div class="liveprofile_living" ng-click="closeLiving()" ng-if="living">
-				<p>正在直播</p>
+				<p>直播中</p>
 			</div>
 			<!--直播已结束-->
 			<div class="liveprofile_liveEnd" ng-click="livePlayBack()" ng-if="liveEnd">
@@ -105,12 +103,12 @@ d==detail
 		<h1 class="title" ng-click="goHome()">直播结束</h1>
 	</ion-footer-bar>
 	<!--报名看直播-->
-	<ion-footer-bar class="signUp" ng-if="!enterLive">
-		<h1 class="title" ng-click="showAlert()" nav-direction="forward">报名看直播</h1>
+	<ion-footer-bar class="signUp" ng-if="enroll">
+		<h1 class="title" ng-click="showAlert()">报名看直播</h1>
 	</ion-footer-bar>
 	<!--进入直播页-->
 	<ion-footer-bar class="bar-assertive" ng-if="enterLive">
-		<h1 class="title" ng-click="gotoLive()" nav-direction="forward">进入直播间</h1>
+		<h1 class="title" ng-click="gotoLive()">进入直播间</h1>
 	</ion-footer-bar>
 	<!--遮罩层-->
 	<div class="p_mask" ng-if="cardShow">

@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers','ngAnimate'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -36,13 +36,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   $ionicConfigProvider.platform.android.navBar.alignTitle('center');//标题的显示
   $ionicConfigProvider.platform.android.views.transition('ios');//过度的动画 三种风格
   
-//$ionicConfigProvider.views.transition();
-  
   $stateProvider
   	//配置tabs路由
     .state('tabs', {
       url: '/tab',
-      
       cache: false,
       templateUrl: './tpls/tabs.html',
       controller: 'TabsController'
@@ -62,6 +59,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('tabs.home.watch', {
     	url:'/watch',
     	cache: false,
+    	params: {
+    		'idLearn':null,
+    		'nav':null,
+    		'position':null
+    	},
     	views: {
     		'watch-home': {
     			templateUrl: './tpls/home/watch-home.html'
@@ -72,6 +74,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('tabs.home.learn', {
     	url:'/learn',
     	cache: false,
+    	params: {
+    		'idLearn':-1,
+    		'nav':null,
+    		'position':null
+    	},
     	views: {
     		'learn-home': {
     			templateUrl: './tpls/home/learn-home.html'
@@ -82,6 +89,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('tabs.home.say', {
     	url:'/say',
     	cache: false,
+    	params: {
+    		'nav':null,
+    		'position':null
+    	},
     	views: {
     		'say-home': {
     			templateUrl: './tpls/home/say-home.html'
@@ -99,7 +110,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-    //配置'最新活动'的路由
+    //配置'活动->最新活动'的路由
     .state('tabs.activity.lastest', {
       url: '/lastest',
       cache: false,
@@ -109,7 +120,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-    //配置'往期活动'的路由
+    //配置'活动->往期活动'的路由
     .state('tabs.activity.past', {
       url: '/past',
       cache: false,
@@ -127,6 +138,26 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 	        'my-tab': {
 	          templateUrl: './tpls/tab-my.html',
 	          controller: 'MyController'
+	        }
+	      }
+    })
+    //配置'我的页面->我的视频'的路由
+    .state('tabs.my.myVedio', {
+      url: '/myVedio',
+      cache: false,
+      	views: {
+	        'myVedio-my': {
+	          templateUrl: './tpls/my/myVedio.html',
+	        }
+	      }
+    })
+    //配置'我的页面->我看过的'的路由
+    .state('tabs.my.myLooked', {
+      url: '/myLooked',
+      cache: false,
+      	views: {
+	        'myLooked-my': {
+	          templateUrl: './tpls/my/myLooked.html',
 	        }
 	      }
     })
@@ -161,8 +192,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
     //配置'登录注册'的路由
 		.state('login_register', {
-      url: '/login_register',
+      url: '/:view/login_register',
       cache: false,
+      params: {
+      	'view': null
+    	},
       templateUrl: './tpls/login_register.html',
       controller: 'LoginRegisterController'
     })
@@ -204,24 +238,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-    //配置直播简介页的路由
-  	.state('liveprofile', {
-  		url: "/:view/liveprofile/:liveprofileId/:liveId",
-  		cache: false,
-  		params:{
-  			'liveprofileId': null,
-  			'liveId': null,
-  			'playId': null,
-  			'detailId': null,
-  			'view': null,
-  			'info': null
-  		},
-  		templateUrl: './tpls/live/live_profile.html',
-  		controller: 'LiveProfileController'
-  	})
     //配置直播的路由
   	.state('live', {
-  		url: "/:view/:view2/live/:liveId",
+  		url: "/:view/:nav/:position/:view2/live/:liveId",
   		cache: false,
   		params:{
   			'liveId': null,
@@ -229,10 +248,29 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   			'detailId': null,
   			'view': null,
   			'view2': null,
-  			'info': null
+  			'info': null,
+  			'nav': null,
+  			'position': null
   		},
   		templateUrl: './tpls/live.html',
   		controller: 'LiveController'
+  	})
+    //配置直播简介页的路由
+  	.state('liveprofile', {
+  		url: "/:view/:nav/:position/liveprofile/:liveprofileId/:liveId",
+  		cache: false,
+  		params:{
+  			'liveprofileId': null,
+  			'liveId': null,
+  			'playId': null,
+  			'detailId': null,
+  			'view': null,
+  			'info': null,
+  			'nav': null,
+  			'position': null
+  		},
+  		templateUrl: './tpls/live/live_profile.html',
+  		controller: 'LiveProfileController'
   	});
     $urlRouterProvider.otherwise('/tab/home');
 //  $ionicConfigProvider.tabs.position('bottom');

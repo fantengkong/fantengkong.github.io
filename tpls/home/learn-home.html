@@ -37,7 +37,7 @@
 		<!--精品推荐列表-->
 		<ion-list class="h_list">
 			<p class="h_recommend">精选推荐</p>
-			<ion-item ng-repeat="item in items2" class="item item-thumbnail-left" ui-sref="liveprofile({liveprofileId:item.id,view:'tabs.home.learn'})">
+			<ion-item ng-repeat="item in items2" class="item item-thumbnail-left" ng-click="learn_to_liveprofile(item.id)" href="">
 				<img ng-src={{item.imgUrl}} />
 				<h2>{{item.title}}</h2>
 				<p><i>{{item.name}}</i><i> {{item.designation}}</i></p>
