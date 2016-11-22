@@ -10,7 +10,6 @@ starterCtrls
     $scope.weixin_back = function(){
     	$state.go($stateParams.view);
     }
-<<<<<<< HEAD
     /*<!-- "access_token": "8z9NCbPqubGp_2AZa0ivxjPxKw74k-w3cVcHxB4d7evocB3wllMnQ62WcHnirmOwGqWvuYE6GmhwKyPJpAqup_C2_DIDyk-IekPMUVtwGLg5wI8L1ifmTll4XW-EUZOuIDUaAFAVQH", 
     "expires_in": 7200-->
 <!--{"errcode":0,"errmsg":"ok","ticket":"kgt8ON7yVITDhtdwci0qeWVGYdpowiWYC6I7xvuk8qvWF15_OrXNSBEPbhIiWCpfOOiVgtVJmC4IPzSZFA6NJg","expires_in":7200}-->    
@@ -61,6 +60,4 @@ signature:6ede1db06c2c6f2d821ba88b56e47d3a645f17bb-->
 		}
 	   	
    
-=======
->>>>>>> a123cfc77d5c9604d7aeca4629cbddcb5681a567
   }]);
