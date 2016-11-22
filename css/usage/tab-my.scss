@@ -6,9 +6,10 @@
         color: #a49f99;
     }
     .tabs-striped.tabs-color-assertive .tab-item.tab-item-active{
-        color: $color;
         font-size: 15px;
         font-weight: 600;
+        color: $color;
+        border-color: $color;
     }
     .k_nologin {
         .k_no {
@@ -123,14 +124,19 @@
         margin: 0;
     }
     .k_lookedList {
-        padding-top: 1.3rem;
+        padding-top: 1.5rem;
         border: none;
         .item {
             border-style: none;
             .item-content {
-                padding-left: 14rem;
-                padding-right: 1.6rem;
-                padding-top: 1.2rem;
+                padding: 1rem 1.6rem 1rem 14rem;
+                min-height: 9.2rem;
+//              padding-left: 14rem;
+//              padding-right: 1.6rem;
+//              padding-top: 1.2rem;
+            }
+            &.item-thumbnail-left, &.item-thumbnail-left .item-content{
+                min-height: 9.2rem;
             }
             img {
                 position: absolute;
@@ -140,16 +146,20 @@
                 max-width: none;
                 max-height: none;
                 left: 1.6rem;
-                top: 1.2rem;
+                top: 1rem;
             }
             h2 {
+                padding-top: 2px;
                 white-space: normal;
+                line-height: 18px;
+                
             }
             p {
-                bottom: 1.8rem;
+                bottom: 1rem;
                 color: #aba6a0;
                 font-size: 12px;
                 position: absolute;
+                line-height: 18px;
                 span {
                     position: absolute;
                     right: 0;
@@ -160,7 +170,7 @@
             }
             b{
                 position: absolute;
-                top: 1.2rem;
+                top: 1rem;
                 left: 1.6rem;
                 font-weight: 100;
                 display: block;

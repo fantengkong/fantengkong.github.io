@@ -11,7 +11,7 @@ k==kong
 	<ion-content class="k_nologin" scroll="false">
 		<div class="k_no">
 			<p>还未登录，请先
-				<a href="#/login_register"><button class="button button-clear" title="登录">登录</button></a>
+				<a ui-sref="login_register({view: 'tabs.my'})"><button class="button button-clear" title="登录">登录</button></a>
 			</p>
 		</div>
 		<div class="k_prompt">
@@ -36,37 +36,14 @@ k==kong
 			</div>
 			<div class="k_message" scroll-height1 style="position: relative;">
 				<ion-tabs class="tabs-top tabs-light tabs-striped tabs-color-assertive">
-					<!--我的视频选项卡-->
-					<ion-tab title="我的视频">
-						<ion-content scroll-height2>
-							<div class="k_lookedList myVedios">
-								<ion-list>
-									<ion-item ng-repeat="myvedio in myVedios" ui-sref="play({myId: myvedio.id,playId:myvedio.id, view:'tabs.my'})" class="item-thumbnail-left">
-										<img ng-src={{myvedio.imgUrl}} />
-										<h2>{{myvedio.title}}</h2>
-										<p><i>{{myvedio.name}}</i><i> {{myvedio.designation}}</i></p>
-										<b>{{myvedio.message}}</b>
-									</ion-item>
-								</ion-list>
-							</div>
-						</ion-content>
+					<ion-tab title="我的视频" href="#/tab/my/myVedio">
+						<ion-nav-view name="myVedio-my"></ion-nav-view>
 					</ion-tab>
-					<!--我看过的选项卡-->
-					<ion-tab title="我看过的">
-						<ion-content ng-controller="MyLookedController" scroll-height2>
-							<div class="k_lookedList myLooked">
-								<ion-list>
-									<ion-item ng-repeat="myLookedVedio in myLookedVedios" ui-sref="play({myId: myLookedVedio.id,playId:myLookedVedio.id, view:'tabs.my'})" class="item-thumbnail-left">
-										<img ng-src={{myLookedVedio.imgUrl}} />
-										<h2>{{myLookedVedio.title}}</h2>
-										<p><i>{{myLookedVedio.name}}</i><i> {{myLookedVedio.designation}}</i></p>
-										<b>{{myLookedVedio.message}}</b>
-									</ion-item>
-								</ion-list>
-							</div>
-						</ion-content>
+					<ion-tab title="我看过的" href="#/tab/my/myLooked">
+						<ion-nav-view name="myLooked-my"></ion-nav-view>
 					</ion-tab>
 				</ion-tabs>
+				
 			</div>
 		</div>
 	</ion-pane>

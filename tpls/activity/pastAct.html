@@ -1,7 +1,7 @@
 <ion-view ng-controller="pastActCtrl">
 	<ion-content>
 		<ion-list>
-			<ion-item ng-repeat="pastActivity in pastActivities" nav-direction="forward" ui-sref="detail({detailId:pastActivity.id,view:'tabs.activity.past',info:pastActivity.info})">
+			<ion-item ng-repeat="pastActivity in pastActivities" href="" ng-click="past_to_detail({{pastActivity.id}})">
 				<div>
 					<a><img ng-src={{pastActivity.imgUrl}} alt="" /></a>
 					<p>{{pastActivity.info}}</p>
