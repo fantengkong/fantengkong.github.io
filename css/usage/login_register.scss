@@ -9,19 +9,6 @@
 * l==login_register
 * */
 .k_login_register {
-    .wx_back {
-        position: absolute;
-        z-index: 1;
-        width: 3.2rem;
-        height: 3.2rem;
-        border-radius: 50%;
-        background: rgba(0, 0, 0, 0.5);
-        line-height: 3.2rem;
-        text-align: center;
-        color: #fff;
-        left: 1.6rem;
-        top: 1rem;
-    }
     ion-content {
         background: #4384e9;
         text-align: center;

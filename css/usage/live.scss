@@ -8,9 +8,6 @@
 * k==kong
 * l==live
 * */
-.word_line{
-        height: 100px;
-    }
 .live {
     p{
         margin: 0;
@@ -167,9 +164,6 @@
             color: #9a9da2;
         }
         .msgContent {
-            &:last-child{
-                margin-bottom: 1.6rem;
-            }
             width: auto;
             height: auto;
             margin-top: 1.6rem;
@@ -240,9 +234,6 @@
         }
     }
     .has-footer {
-        &.has_weixin{
-            top: 25rem;
-        }
         bottom: 50px;
         top: 21rem;
     }
@@ -295,11 +286,6 @@
         .item-input-wrapper {
             height: 34px;
             border-radius: 17px;
-            margin-top: 0;
-        }
-        span{
-            padding: 0 1.6rem;
-            color: #8b8b8b;
         }
     }
 }

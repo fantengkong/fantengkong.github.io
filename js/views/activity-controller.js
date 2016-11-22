@@ -1,8 +1,8 @@
 starterCtrls
-  .controller('ActivityController', ['$ionicViewSwitcher', '$scope', '$http', '$state', function ($ionicViewSwitcher, $scope, $http, $state) {
-		
+  .controller('ActivityController', ['$scope', '$http', '$state', function ($scope, $http, $state) {
+
   }])
-  .controller('lastestActCtrl', ['$ionicViewSwitcher', '$scope', '$http', '$state', function ($ionicViewSwitcher, $scope, $http, $state) {
+  .controller('lastestActCtrl', ['$scope', '$http', '$state', function ($scope, $http, $state) {
  		/*活动页数据*/
     $scope.latestActivities = []; 
 		/*获取数据*/
@@ -18,13 +18,8 @@ starterCtrls
 				}
 			}
 		);
-		$scope.last_to_detail = function(index){
-			$state.go("detail",{detailId:index, view:'tabs.activity.lastest'});
-    	$ionicViewSwitcher.nextDirection("forward");
-			
-		}
  	}])
-  .controller('pastActCtrl', ['$ionicViewSwitcher', '$scope', '$http', '$state', function ($ionicViewSwitcher, $scope, $http, $state) {
+  .controller('pastActCtrl', ['$scope', '$http', '$state', function ($scope, $http, $state) {
  		/*活动页数据*/
     $scope.pastActivities = [];
 		/*获取数据*/
@@ -40,12 +35,5 @@ starterCtrls
 				}
 			}
 		);
-		
-		$scope.past_to_detail = function(index){
-			$state.go("detail",{detailId:index, view:'tabs.activity.past'});
-    	$ionicViewSwitcher.nextDirection("forward");
-			
-		}
-		
  	}])
   

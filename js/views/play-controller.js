@@ -1,32 +1,17 @@
 starterCtrls
-  .controller('PlayController', ['$ionicViewSwitcher', '$scope', '$state', '$stateParams', '$http', function ($ionicViewSwitcher, $scope, $state, $stateParams,$http) {
-//		console.log($stateParams);
+  .controller('PlayController', ['$scope', '$state', '$stateParams', '$http', function ($scope, $state, $stateParams,$http) {
+		console.log($stateParams);
 		$scope.pBack=function(){
 			if($stateParams.myId || $stateParams.myId==0 || $stateParams.homeId || $stateParams.homeId == 0){
 				$state.go($stateParams.view);
-    		$ionicViewSwitcher.nextDirection("back");
-				
 			}else	if($stateParams.playId || $stateParams.playId == 0){
 				$state.go($stateParams.view2, {detailId:$stateParams.playId,view: $stateParams.view});
-    		$ionicViewSwitcher.nextDirection("back");
-				
 			}else if($stateParams.detailId>=0){
 				$state.go("detail", {detailId:$stateParams.detailId});
-    		$ionicViewSwitcher.nextDirection("back");
-				
 			}else{
 				$state.go("tabs.home.watch");
-    		$ionicViewSwitcher.nextDirection("back");
 			}
-		}
-		$scope.display = false;
-		$scope.Video = true;
-		if($stateParams.myId || $stateParams.myId==0){
-			if($stateParams.myId%2 == 0){
-				$scope.display = true;
-				$scope.Video = false;
-				
-			}
+			
 		}
 		$http.get('mock/home_list.json')
 			.then(
@@ -44,7 +29,7 @@ starterCtrls
   		$(".p_mask").hide();
   	}
   	/*显示更多*/
-  	
+  	$scope.display = false;
   	$scope.showMore = function(){
   		if($scope.display == false){
   			$(".showMore i").css('transform','rotate(180deg)');
@@ -85,5 +70,8 @@ starterCtrls
 		$scope.play = function(){
 			$scope.playSignShow = false;
 		}
-		
+		$scope.Video = true;
+		if($scope.Video == false){
+			$scope.display = true;
+		}
   }]);

@@ -9,26 +9,26 @@ d==detail
 -->
 
 <ion-view class="liveprofile">
-	<!--关注探基微信-->
-	<div class="row follow_TJweixin" ng-if="followTJ">
-	  <div class="col col-20 TJ_logo">探基</div>
-	  <div class="col col-50 TJ_info"><p>online</p>基因行业在线教育平台</span></div>
-	  <div class="col col-30"><button ng-click="goToTJweixin()">关注公众号</button></div>
-	</div>
-	<!--返回按钮-->
-	<div ng-click="liveprofile_back()" class="liveprofile_back" ng-class="{true: 'back_top'}[followTJ]">
-		<i class="icon iconfont">&#xe64e;</i>
-	</div>
-	<ion-content class="has-footer" ng-class="{true: 'has-header'}[followTJ]">
+	<ion-content>
+		<!--关注探基微信-->
+		<div class="row follow_TJweixin" ng-if="followTJ">
+		  <div class="col col-20 TJ_logo">探基</div>
+		  <div class="col col-50 TJ_info"><p>online</p>基因行业在线教育平台</span></div>
+		  <div class="col col-30"><button ng-click="goToTJweixin()">关注公众号</button></div>
+		</div>
 		<!--视频窗口-->
 		<div class="liveprofile_img">
+			<!--返回按钮-->
+			<div ng-click="dBack()" class="liveprofile_back" nav-direction="back">
+				<i class="icon iconfont">&#xe64e;</i>
+			</div>
 			<!--直播预告-->
 			<div class="liveprofile_countdown" ng-if="livePreview">
 				<p>距离开播还有: 3天 06小时 23分  18秒</p>
 			</div>
 			<!--正在直播-->
 			<div class="liveprofile_living" ng-click="closeLiving()" ng-if="living">
-				<p>直播中</p>
+				<p>正在直播</p>
 			</div>
 			<!--直播已结束-->
 			<div class="liveprofile_liveEnd" ng-click="livePlayBack()" ng-if="liveEnd">
@@ -47,12 +47,12 @@ d==detail
 			<p class="liveprofile_title">成人PH+ALL治疗研究进展  (成人PH+ALL多行演示)</p>
 			<!--直播报名人数-->
 			<div class="liveprofile_enrollment">
-				<img src="../../img/adam.jpg" alt="" />
-				<img src="../../img/ben.png" alt="" />
-				<img src="../../img/mike.png" alt="" />
-				<img src="../../img/perry.png" alt="" />
-				<img src="../../img/mike.png" alt="" />
-				<img src="../../img/perry.png" alt="" />
+				<span><img src="http://placehold.it/24" alt="" /></span>
+				<span><img src="http://placehold.it/24" alt="" /></span>
+				<span><img src="http://placehold.it/24" alt="" /></span>
+				<span><img src="http://placehold.it/24" alt="" /></span>
+				<span><img src="http://placehold.it/24" alt="" /></span>
+				<span><img src="http://placehold.it/24" alt="" /></span>
 				<span class="people_num">27人已报名</span>
 			</div>
 			<!--直播关键词-->
@@ -102,13 +102,9 @@ d==detail
 	<ion-footer-bar class="calm" ng-if="liveFinish">
 		<h1 class="title" ng-click="goHome()">直播结束</h1>
 	</ion-footer-bar>
-	<!--报名看直播-->
-	<ion-footer-bar class="signUp" ng-if="enroll">
-		<h1 class="title" ng-click="showAlert()">报名看直播</h1>
-	</ion-footer-bar>
-	<!--进入直播页-->
-	<ion-footer-bar class="bar-assertive" ng-if="enterLive">
-		<h1 class="title" ng-click="gotoLive()">进入直播间</h1>
+	<!--跳转到直播页-->
+	<ion-footer-bar class="signUp" ng-if="enterLive">
+		<h1 class="title" ng-bind="baoming" ng-click="showAlert()" nav-direction="forward">报名看直播</h1>
 	</ion-footer-bar>
 	<!--遮罩层-->
 	<div class="p_mask" ng-if="cardShow">

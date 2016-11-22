@@ -1,8 +1,10 @@
 starterCtrls
 	.controller('ClassifyController', ['$scope',function($scope) {
+		
 	}])
 	/*看大会*/
 	.controller('watchCtrl',['$scope', '$state', function($scope, $state) {
+		
 		/*跳转到首页*/
 		$scope.closeWatch = function() {
 			$state.go("tabs.home.watch",{}, {reload: true});
@@ -19,7 +21,7 @@ starterCtrls
 			$scope.navItems1 = JSON.parse(localStorage.getItem("navItems1"));
 		}else{
 			$scope.navItems1 = [
-				{id: 0,name: "了解基因",selected: true},
+				{id: 0,name: "看大会",selected: true},
 				{id: 1,name: "基因组",selected: true}, 
 				{id: 2,name: "癌症",selected: true}, 
 				{id: 3,name: "单细胞",selected: true}, 
@@ -71,7 +73,7 @@ starterCtrls
 			$scope.navItems2 = JSON.parse(localStorage.getItem("navItems2"));
 		}else{
 			$scope.navItems2 = [
-				{id: 0,name: "基因讨论",selected: true},
+				{id: 0,name: "学知识",selected: true},
 				{id: 1,name: "基因组",selected: true}, 
 				{id: 2,name: "癌症",selected: true}, 
 				{id: 3,name: "单细胞",selected: true}, 
@@ -125,7 +127,7 @@ starterCtrls
 			$scope.navItems3 = JSON.parse(localStorage.getItem("navItems3"));
 		}else{
 			$scope.navItems3 = [
-				{id: 0,name: "基因权威",selected: true},
+				{id: 0,name: "看大会",selected: true},
 				{id: 1,name: "基因组",selected: true}, 
 				{id: 2,name: "癌症",selected: true}, 
 				{id: 3,name: "单细胞",selected: true}, 
