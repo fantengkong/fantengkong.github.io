@@ -155,6 +155,16 @@ angular.module('starter.routes', [])
       templateUrl: './tpls/play.html',
       controller: 'PlayController'
     })
+    //配置'登录注册'的路由
+		.state('login_register', {
+      url: '/:view/login_register',
+      cache: false,
+      params: {
+      	'view': null
+    	},
+      templateUrl: './tpls/login_register.html',
+      controller: 'LoginRegisterController'
+    })
 		//配置'分类页面'的路由
     .state('classify', {
       url: '/classify',
@@ -228,19 +238,4 @@ angular.module('starter.routes', [])
   		controller: 'LiveProfileController'
   	});
     $urlRouterProvider.otherwise('/tab/home');
-})
-.config(['$stateProvider','$httpProvider',function($stateProvider,$httpProvider) {
-	$stateProvider
-    
-    //配置'登录注册'的路由
-		.state('login_register', {
-      url: '/:view/login_register',
-      cache: false,
-      params: {
-      	'view': null
-    	},
-      templateUrl: './tpls/login_register.html',
-      controller: 'LoginRegisterController'
-    })
-		
-}]);
+});
