@@ -6,9 +6,15 @@ starterCtrls
 //		if (ionic.Platform.isIOS()) {
 //		cordova.plugins.Keyboard.disableScroll(true);
 //		}
+<<<<<<< HEAD
 //		console.log($('body').scrollTop(10));
 		
 //		console.log($(window).height());
+=======
+		console.log($('body').scrollTop(10));
+		
+		console.log($(window).height());
+>>>>>>> a123cfc77d5c9604d7aeca4629cbddcb5681a567
 		
 		
     $scope.keyboard_show = false;
@@ -91,6 +97,7 @@ starterCtrls
    /*进入探基微信公众号*/
    $scope.goToTJweixin = function(){
    	$state.go("login_register",{view:'live'});
+<<<<<<< HEAD
    }
    $scope.focus = function(){
    		$scope.keyboard_show = true;
@@ -103,4 +110,10 @@ starterCtrls
    
    
    
+=======
+   }
+		window.addEventListener('native.keyboardshow', function(){
+			$scope.keyboard_show = true;
+		});
+>>>>>>> a123cfc77d5c9604d7aeca4629cbddcb5681a567
   }]);

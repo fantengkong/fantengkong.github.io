@@ -125,7 +125,11 @@ starterCtrls
 			$scope.learnDataLoad = true;
 		$scope.loadMore = function() {
 			if(!$("ion-infinite-scroll i").html()){
+<<<<<<< HEAD
 				$("ion-infinite-scroll").prepend("<i>向上滑动，加载更多</i>").css("color","#b0aba8");
+=======
+				$("ion-infinite-scroll").prepend("<i>高能加载中</i>").css("color","#b0aba8");
+>>>>>>> a123cfc77d5c9604d7aeca4629cbddcb5681a567
 			}
 			$timeout(function(){
 				$http.get('./mock/home_more-item.json').success(function(items) {
@@ -253,7 +257,11 @@ starterCtrls
 		$scope.watchDataLoad = true;
 		$scope.loadMore = function() {
 			if(!$("ion-infinite-scroll i").html()){
+<<<<<<< HEAD
 				$("ion-infinite-scroll").prepend("<i>向上滑动，加载更多</i>").css("color","#b0aba8");
+=======
+				$("ion-infinite-scroll").prepend("<i>高能加载中</i>").css("color","#b0aba8");
+>>>>>>> a123cfc77d5c9604d7aeca4629cbddcb5681a567
 			}
 			$timeout(function(){
 				$http.get('./mock/home_more-item.json').success(function(items) {
@@ -370,7 +378,11 @@ starterCtrls
 			$scope.sayDataLoad = true;
 		$scope.loadMore = function() {
 			if(!$("ion-infinite-scroll i").html()){
+<<<<<<< HEAD
 				$("ion-infinite-scroll").prepend("<i>向上滑动，加载更多</i>").css("color","#b0aba8");
+=======
+				$("ion-infinite-scroll").prepend("<i>高能加载中</i>").css("color","#b0aba8");
+>>>>>>> a123cfc77d5c9604d7aeca4629cbddcb5681a567
 			}
 			$timeout(function(){
 				$http.get('./mock/home_more-item.json').success(function(items) {
