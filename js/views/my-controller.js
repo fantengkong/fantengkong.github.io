@@ -1,5 +1,5 @@
 starterCtrls
-  .controller('MyController', ['$scope', '$ionicTabsDelegate', '$http', function ($scope, $ionicTabsDelegate, $http) {
+  .controller('MyController', ['$ionicViewSwitcher', '$state', '$scope', '$ionicTabsDelegate', '$http', function ($ionicViewSwitcher, $state, $scope, $ionicTabsDelegate, $http) {
   	$scope.isFlag = true;		
   	if(sessionStorage.getItem("login")){
   		$(".k_nologin").attr("hidden","true");
@@ -8,6 +8,10 @@ starterCtrls
   		$(".k_haslogin").attr("hidden","true");
   		$(".k_nologin").removeAttr("hidden");
   	}
+  	
+  	
+  }])
+  .controller('MyVedioCtrl', ['$ionicViewSwitcher', '$state', '$scope', '$ionicTabsDelegate', '$http', function ($ionicViewSwitcher, $state, $scope, $ionicTabsDelegate, $http) {
   	
   	$scope.myVedios = []; 	  
   	
@@ -31,19 +35,14 @@ starterCtrls
 					}
 				}
 			);
-		$scope.myLookedVedios = []; 
-		
-  	$http.get('mock/my_list.json')
-		.then(
-			function(res) {
-				$scope.myView = res.data;
-				$scope.myViewLength = $scope.myView.length;
-			}
-		);	
+			
+		$scope.myVedio_to_play = function(index){
+			$state.go("play",{myId: index,playId:index, view:'tabs.my.myVedio'});
+    	$ionicViewSwitcher.nextDirection("forward");
+		}
   }])
-  .controller('MyLookedController',['$scope', '$ionicTabsDelegate', '$http', function ($scope, $ionicTabsDelegate, $http) {
-		
-		$scope.myLookedVedios = []; 
+  .controller('MyLookedCtrl', ['$ionicViewSwitcher', '$state', '$scope', '$ionicTabsDelegate', '$http', function ($ionicViewSwitcher, $state, $scope, $ionicTabsDelegate, $http) {
+  	$scope.myLookedVedios = []; 
 		
   	$http.get('mock/my_list.json')
 			.then(
@@ -65,4 +64,9 @@ starterCtrls
 					}
 				}
 			);
+		$scope.looked_to_play = function(index){
+			$state.go("play",{myId: index, playId:index, view:'tabs.my.myLooked'});
+    	$ionicViewSwitcher.nextDirection("forward");
+		}
   }]);
+  

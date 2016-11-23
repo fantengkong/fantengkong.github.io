@@ -12,51 +12,73 @@
     p {
         margin: 0;
     }
+    /*关注微信*/
+    .follow_TJweixin{
+        height: 40px;
+        background: #ff6600;
+        font-size: #fff;
+        padding: 0 1.6rem;
+        .col{
+            padding: 0;
+        }
+        div,button{
+            color: #fff;
+        }
+        .TJ_logo{
+            
+            display: inline-block;
+            line-height: 40px;
+            color: #fff;
+            padding-right: .6rem;
+            font-size: 22px;
+            font-weight: 900;
+        }
+        .TJ_info{
+            display: inline-block;
+            line-height: 12px;
+            font-size: 12px;
+            p{
+              font-size: 12px;
+              line-height: 20px;
+              height: 20px;
+                
+            }
+        }
+        button{
+            font-size: 12px;
+            white-space: nowrap;
+            background: none;
+            margin: .8rem 0;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            height: 24px;
+        }
+    }
+    /*返回按钮*/
+    .liveprofile_back{
+        position: absolute;
+        z-index: 1;
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.5);
+        line-height: 3.2rem;
+        text-align: center;
+        color: #fff;
+        left: 1.6rem;
+        top: 1rem;
+        &.back_top{
+            top:5rem;
+        }
+    }
     ion-content {
         &.has-footer {
             bottom: 50px;
         }
-        .follow_TJweixin{
-            height: 40px;
-            background: #ff6600;
-            font-size: #fff;
-            padding: 0 1.6rem;
-            .col{
-                padding: 0;
-            }
-            div,button{
-                color: #fff;
-            }
-            .TJ_logo{
-                
-                display: inline-block;
-                line-height: 40px;
-                color: #fff;
-                padding-right: .6rem;
-                font-size: 22px;
-                font-weight: 900;
-            }
-            .TJ_info{
-                display: inline-block;
-                line-height: 12px;
-                font-size: 12px;
-                p{
-                  font-size: 12px;
-                  line-height: 20px;
-                  height: 20px;
-                    
-                }
-            }
-            button{
-                font-size: 12px;
-                white-space: nowrap;
-                background: none;
-                margin: .8rem 0;
-                border: 1px solid #fff;
-                border-radius: 4px;
-                height: 24px;
-            }
+        &.has-header{
+            top: 40px;
         }
+    
         .liveprofile_img {
             position: relative;
             height: 21rem;
@@ -112,26 +134,14 @@
                     margin: 0;
                 }
             }
-            .liveprofile_back{
-                position: absolute;
-                z-index: 1;
-                width: 3.2rem;
-                height: 3.2rem;
-                border-radius: 50%;
-                background: rgba(0,0,0,0.5);
-                line-height: 3.2rem;
-                text-align: center;
-                color: #fff;
-                left: 1.6rem;
-                top: 1rem;
-            }
+            
             img {
                 width: 100%;
                 height: 100%;
             }
         }
         .list {
-            padding: 1.6rem 0 0 0;
+            padding: 1.6rem 0 1.6rem 0;
             .item {
                 border: none;
             }
@@ -148,13 +158,18 @@
                 height: 24px;
                 overflow: hidden;
                 position: relative;
+                img{
+                    border-radius: 5px;
+                    width: 24px;
+                    height: 24px;
+                }
                 span{
                     display: inline-block;
                     overflow: hidden;
                     width: 24px;
                     height: 24px;
                     border-radius: 5px;
-                    
+                
                 }
                 .people_num{
                     position: absolute;
@@ -313,7 +328,7 @@
         right: 0;
         top: 10.2rem;
         margin: auto;
-        width: 31.6rem;
+        width: 85%;
         height: 40rem;
         border-radius: 4px;
         span {
